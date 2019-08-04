@@ -12,4 +12,4 @@ title: Topic 3 Readings
 
 Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 3 and 4.
 
-Williams and Whitten, ``But Wait...`` [dynsim](pdf/WW.pdf)
+Williams and Whitten, ``But Wait...`` [dynsim](../pdf/WW.pdf)

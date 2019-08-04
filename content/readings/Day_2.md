@@ -14,4 +14,4 @@ Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 2 and 5.  Optional but 
 
 ARIMA Models in R.  [From Hyndman](https://otexts.com/fpp2/arima-r.html)
 
-[Clarke, et. al.](pdf/CMW.pdf)
+Falklands Intervention [Clarke, et. al.](../pdf/CMW.pdf).  Harold will discuss this in the last 1.25 hours.
