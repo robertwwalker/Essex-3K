@@ -1,0 +1,45 @@
+---
+title: Forecasts and Highcharts
+author: RWW
+date: '2019-05-24'
+slug: forecasts-and-highcharts
+categories:
+  - time series
+  - R
+tags:
+  - forecast
+  - R
+  - R Markdown
+  - time series
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
+
+
+<div id="beautiful-forecasting-can-be-quick-and-easy" class="section level1">
+<h1>Beautiful forecasting can be quick and easy</h1>
+<ol style="list-style-type: decimal">
+<li>I will grab the adjusted closing price of Ford stock (<code>F</code>) from January 1, 2018.<br />
+</li>
+<li>Use the <code>forecast</code> package to find an ARIMA model and forecast it for 50 periods.<br />
+</li>
+<li>Use <code>highcharter</code> to plot it inside a framewidget that is appropriate with the markdown.</li>
+</ol>
+<pre class="r"><code>library(tidyquant)
+library(forecast)
+library(highcharter)
+library(widgetframe)
+A.Stock &lt;- &quot;F&quot; %&gt;% tq_get(., from = &quot;2018-01-01&quot;)
+A.Res &lt;- A.Stock %&gt;% select(date, adjusted) 
+A.Forecast &lt;- forecast(auto.arima(A.Res$adjusted), level=0.95, n=50)</code></pre>
+<p>I separated the plot line. Now to the result.</p>
+<pre class="r"><code>frameWidget(hchart(A.Forecast), width=600)</code></pre>
+<div id="htmlwidget-1" style="width:600px;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/blog/2019-05-24-forecasts-and-highcharts_files/figure-html//widgets/widget_FW1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>I wonder how easy it is to integrate the stock chart stuff.</p>
+<pre class="r"><code>frameWidget(hchart(A.Stock, type=&quot;stock&quot;), width = 600)</code></pre>
+<div id="htmlwidget-2" style="width:600px;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"url":"/blog/2019-05-24-forecasts-and-highcharts_files/figure-html//widgets/widget_SC1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+</div>

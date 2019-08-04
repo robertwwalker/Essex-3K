@@ -1,0 +1,67 @@
+---
+title: "tidyquant"
+author: "RWW"
+date: 2019-05-11T21:13:14-05:00
+slug: some-basic-time-series-and-moving-average-stuff
+categories: ["R"]
+tags: ["R", "time series", "ggplot"]
+---
+
+# Some Basic Time Series with Equities
+
+First, let me get some data using `tidyquant`.
+
+## tidyquant
+
+`tidyquant` automates a lot of equity research and calculation using *tidy* concepts.  I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent.  In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.
+
+```{r cars, message=FALSE}
+library(tidyquant)
+tq_index("SP500") %>% 
+  filter(weight > 0.011) %>% 
+  select(symbol,company) -> Tickers
+Tickers <- Tickers %>% 
+  filter(symbol!="BRK.B") %>% 
+  filter(symbol!="GOOGL") %>% 
+  filter(symbol!="JNJ")
+Eq.P <- Tickers %>%  
+  tq_get(., from="2018/01/01", to="2019/05/01") 
+Returns <- Eq.P %>% 
+  group_by(symbol) %>% 
+  tq_transmute(., adjusted, periodReturn, period="daily")
+CumulativeReturns <- Eq.P %>% 
+  group_by(symbol) %>% 
+  tq_transmute(., adjusted, periodReturn, period="daily", type = "log", col_rename = "returns") %>% 
+  mutate(wealth.index = 100 * cumprod(1 + returns))
+#  ungroup()
+library(skimr)
+Returns %>% skim()
+```
+
+The final line provides a summary of the returns.  Now let me plot the data.
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+CumulativeReturns %>% 
+  ggplot(., aes(x=date, y=wealth.index, color=symbol, group=symbol)) + 
+  geom_line() + 
+  labs(x="Date", y="Cumulative Wealth [Baseline 100]", color="Ticker") + 
+  theme_economist_white()
+```
+
+Finally, I will take the average of the `wealth.index` and the associated standard deviation and add it as a plus and minus ribbon.  Notice the nice modularity of the ggplot that allows different data with common axes and scale defintion to overlay in sensible and simple ways.  Also, notice the scalar alpha to lighten the bands that lies **outside** of the data statement in `geom_ribbon`.  This banding is only to illustrate bands on a ggplot; the substantive quantity that is represented is meaningless.
+ 
+```{r}
+CR <- CumulativeReturns %>% group_by(date) %>% 
+  summarise(MSP = mean(wealth.index), SDSP = sd(wealth.index)) %>% 
+  mutate(UL = MSP + SDSP, LL = MSP - SDSP, symbol = "SP500", wealth.index = MSP) %>% 
+  select(date, LL, UL, symbol)
+GSR <- ggplot() + 
+  geom_line(data=CumulativeReturns, aes(x=date, y=wealth.index, color=symbol, group=symbol)) + 
+  geom_ribbon(data=CR, aes(x=date, ymin=LL, ymax=UL), alpha=0.25) + 
+  labs(x="Date", y="Cumulative Wealth [Baseline 100]", color="Ticker", title="S and P Components over 1.1%", subtitle = "S and P average shaded") + 
+  theme_economist_white() + geom_hline(yintercept=100, color="black")
+GSR
+```
+
