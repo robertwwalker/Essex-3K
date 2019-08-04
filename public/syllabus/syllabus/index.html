@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="3K: Dynamics and Heterogeneity">
+<meta name="description" content="Modelling Dynamics and Heterogeneity: Time Series, Cross-Sectional Time Series, and Panel Data Harold D. Clarke, University of Texas Dallas and Robert Walker, Willamette University 5-16 August (two week course / 35 hrs)
+TOPICS The Core and Related Problems of Heterogeneity and Dynamics  A Brief Review of Linear Models
+ Summary and Visualisation of Time Series and Panels
+ Using Stata and R to summarise and visualise single and multiple time series data">
+
+<meta property="og:title" content="Syllabus for 3K-2019" />
+<meta property="og:description" content="Modelling Dynamics and Heterogeneity: Time Series, Cross-Sectional Time Series, and Panel Data Harold D. Clarke, University of Texas Dallas and Robert Walker, Willamette University 5-16 August (two week course / 35 hrs)
+TOPICS The Core and Related Problems of Heterogeneity and Dynamics  A Brief Review of Linear Models
+ Summary and Visualisation of Time Series and Panels
+ Using Stata and R to summarise and visualise single and multiple time series data" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://essex2019-3k.netlify.com/syllabus/syllabus/" />
+<meta property="article:published_time" content="2019-05-15T06:28:26-07:00"/>
+<meta property="article:modified_time" content="2019-05-15T06:28:26-07:00"/>
+
+
+<title>
+
+
+     Syllabus 
+
+</title>
+<link rel="canonical" href="https://essex2019-3k.netlify.com/syllabus/syllabus/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-04%2008%3a34%3a50.8846833%20-0700%20PDT%20m%3d%2b1.275392401">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-04%2008%3a34%3a50.8846833%20-0700%20PDT%20m%3d%2b1.275392401">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-04%2008%3a34%3a50.8846833%20-0700%20PDT%20m%3d%2b1.275392401">
+    
+        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-04%2008%3a34%3a50.8846833%20-0700%20PDT%20m%3d%2b1.275392401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://essex2019-3k.netlify.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://essex2019-3k.netlify.com/"><img class="avatar" src="https://essex2019-3k.netlify.com/img/HLogo2.png" srcset="https://essex2019-3k.netlify.com/img/HLogo2.png 1x"></a>
+            
+            <a href="https://essex2019-3k.netlify.com/"><div class="name">3K: Dynamics and Heterogeneity</div></a>
+            
+              <h3 class="self-intro">Time Series and Panel Data</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://essex2019-3k.netlify.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://essex2019-3k.netlify.com/code/"><span>Code</span></a></li>
+                    
+                        <li class="nav-syllabus"><a href="https://essex2019-3k.netlify.com/syllabus/"><span>Syllabus</span></a></li>
+                    
+                        <li class="nav-lectures"><a href="https://essex2019-3k.netlify.com/lectures/"><span>Lectures</span></a></li>
+                    
+                        <li class="nav-readings"><a href="https://essex2019-3k.netlify.com/readings/"><span>Readings</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://essex2019-3k.netlify.com/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/robertwwalker" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/PieRatio" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:rwalker@willamette.edu"><img class="icon" src="https://essex2019-3k.netlify.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    Syllabus
+
+</div>
+
+            <div class="markdown">
+                
+
+<p><img src="https://essex2019-3k.netlify.com/img/HLogo.jpg" alt="AltText" /></p>
+
+<h1 id="modelling-dynamics-and-heterogeneity">Modelling Dynamics and Heterogeneity:</h1>
+
+<h2 id="time-series-cross-sectional-time-series-and-panel-data">Time Series, Cross-Sectional Time Series, and Panel Data</h2>
+
+<p><strong>Harold D. Clarke, University of Texas Dallas and Robert Walker, Willamette University
+ 5-16 August (two week course / 35 hrs)</strong></p>
+
+<h1 id="topics">TOPICS</h1>
+
+<h2 id="the-core-and-related-problems-of-heterogeneity-and-dynamics">The Core and Related Problems of Heterogeneity and Dynamics</h2>
+
+<ol>
+<li>A Brief Review of Linear Models<br /></li>
+
+<li><p>Summary and Visualisation of Time Series and Panels</p>
+
+<ul>
+<li>Using Stata and R to summarise and visualise single and multiple time series data<br /></li>
+<li>The T = B + W decomposition <a href="https://essex2019-3k.netlify.com/code/panelsummary/">PanelSummary</a><br /></li>
+<li>Reading: <a href="https://essex2019-3k.netlify.com/readings/day_1/">Day 1 Readings</a><br /></li>
+</ul></li>
+
+<li><p>[Day 2] Univariate Time Series</p>
+
+<ul>
+<li>Specification, estimation and diagnostics<br /></li>
+<li>Forecasting with ARIMA models<br /></li>
+<li><code>forecast; auto.arima</code>; <code>ts::arimax</code><br /></li>
+<li>Interventions<br /></li>
+<li>Stationarity<br /></li>
+<li>Unit-Root tests: <code>fSeries::UnitrootTests</code> and <code>plm::purtest</code><br /></li>
+<li>Reading: <a href="https://essex2019-3k.netlify.com/readings/day_2/">Day 2 Readings</a><br /></li>
+<li>Applications: Clarke, Mishler and Whiteley, &ldquo;Recapturing the Falklands&rdquo;<br /></li>
+</ul></li>
+</ol>
+
+<h2 id="dynamic-regressions">Dynamic Regressions</h2>
+
+<ol>
+<li>[Day 3] Heterogeneity over Time<br />
+
+<ul>
+<li>the lagged dependent variable [and dynsim]</li>
+<li>Specification, estimation and diagnostics<br /></li>
+<li>VAR</li>
+<li>ADL</li>
+<li>interpretation</li>
+</ul></li>
+<li>Reading: <a href="https://essex2019-3k.netlify.com/readings/day_3/">Day 3 Readings</a><br /></li>
+</ol>
+
+<h2 id="the-short-and-long-run">The Short and Long-Run</h2>
+
+<ol>
+<li>Cointegration, ECM, and Vector Error Correction
+
+<ul>
+<li>Non-stationary processes - implications and testing</li>
+<li>Dynamic equilibria and cointegrated processes</li>
+<li>Structural and Reduced Forms</li>
+<li>VECM Models</li>
+<li><code>tsDyn, ecm</code></li>
+</ul></li>
+<li>Applications:</li>
+<li>Reading: <a href="https://essex2019-3k.netlify.com/readings/day_4/">Day 4 Readings</a></li>
+</ol>
+
+<h2 id="heterogeneity-part-i">Heterogeneity, Part I</h2>
+
+<ol>
+<li>ARCH and GARCH and Breaks<br />
+
+<ul>
+<li>Volatility and conditional heteroscedasticity in financial and public opinion data<br /></li>
+<li><code>rugarch</code><br /></li>
+<li>Structural Breaks [old school and Park&rsquo;s Bayes work]</li>
+</ul></li>
+<li>Reading: <a href="https://essex2019-3k.netlify.com/readings/day_5/">Day 5 Readings</a><br /></li>
+<li>Applications: Clarke et al., 2009: ch. 4 (ARCH Models of Public Opinion)<br />
+
+<ul>
+<li>Applications: Park: Bayesian Structural Breaks<br /></li>
+</ul></li>
+</ol>
+
+<h2 id="varying-parameters">Varying Parameters</h2>
+
+<ol>
+<li>Varying Coefficients Models in Time and Space
+
+<ul>
+<li>Hierarchical models: Bell, Fairborther, Jones 2018</li>
+<li>Time-varying coefficients regression models</li>
+</ul></li>
+</ol>
+
+<h2 id="discrete-time-series-latent-variables-and-state-spaces">Discrete Time Series, Latent Variables, and State Spaces</h2>
+
+<ol>
+<li>Time Series Models of Latent Variables
+
+<ul>
+<li>State Space representations of time series processes</li>
+<li>Dynamic factor analysis with covariates</li>
+</ul></li>
+</ol>
+
+<p>Reading:
+Commandeur and Koopman, chs. 1-9
+Application: Jackman, &ldquo;Pooling the Polls&rdquo;
+Application: Some Bond Ratings Paper <a href="https://rww.science/post/pew-data-on-bond-ratings-and-rainy-day-funds/">A Post</a></p>
+
+<h2 id="texts">Texts</h2>
+
+<p>Box-Steffensmeier, Janet et al. 2014. Time Series Analysis for the Social Sciences. New York: Cambridge     University Press.</p>
+
+<h3 id="recommended-supplementary-texts">Recommended Supplementary Texts</h3>
+
+<p>Asteriou, Dimitrios and Stephen G. Hall. 2011. Applied Econometrics: A Modern Approach Using    EVIEWS and Microfit. 2nd Edition. London: Palgrave.</p>
+
+<p>Colonescu, Constantin.  2016.  Principles of Econometrics with R. <a href="https://bookdown.org/ccolonescu/RPoE4/">Link</a></p>
+
+<p>Commandeur, Jacques and Siem Jan Koopman. 2007. An Introduction to State Space Time Series Analysis.    Oxford: Oxford University Press.</p>
+
+<p>Enders, Walter. Applied Econometric Time Series. 4th edition. New York: John Wiley &amp; Sons, 2014.</p>
+
+<p>Hyndman, R.J., &amp; Athanasopoulos, G.  2018. Forecasting: principles and practice, 2nd edition, OTexts: Melbourne, Australia. <a href="http://OTexts.com/fpp2">Link</a>.</p>
+
+<p>Kleiber, Christian and Achim Zeileis. 2008. Applied Econometrics with R. New York: Springer.</p>
+
+<p>Pfaff, Bernhard. 2006. Analysis of Integrated and Cointegrated Time Series With R. New York Springer.</p>
+
+<h2 id="r-packages">R Packages</h2>
+
+<p><a href="https://rdrr.io/cran/TSA/">TSA: The R version:</a><br />
+<a href="https://otexts.com/fpp2/">Forecast Textbook:</a><br />
+<a href="https://cran.r-project.org/web/packages/plm/plm.pdf">PLM: Panel Linear Models:</a></p>
+
+<h1 id="references">REFERENCES</h1>
+
+<p>Baillie, R. T. and T. Bollerslev. 1994. “Cointegation, Fractional Cointegration and Exchange Rate   Dynamics.” The Journal of Finance 49: 737-45.</p>
+
+<p>Bell, A., Fairbrother, M. &amp; Jones, K. Qual Quant (2019) 53: 1051. <a href="https://doi.org/10.1007/s11135-018-0802-x">Link</a></p>
+
+<p>Box-Steffensmeier, Janet M. and Renée M. Smith. 1996. “The Dynamics of Aggregate Partisanship.”     American Political Science Review 90: 567-80.</p>
+
+<p>Charemza, W.W. and Derek F. Deadman. New Directions in Econometric Practice. 2nd edition.   Aldershot: Edward Elgar, 1997.</p>
+
+<p>Clarke, H. D., W. Mishler and P. Whiteley. 1990. &ldquo;Recapturing the Falklands: Models of Conservative     Popularity, 1979-83.&rdquo; British Journal of Political Science 20:63-82.</p>
+
+<p>Clarke, H. D. et al. 2009. Performance Politics and the British Voter. Cambridge: Cambridge     University Press, ch. 4.</p>
+
+<p>Engle, R.  F. and C. W. J. Granger. 1987. &ldquo;Co-integration and Error Correction: Representation,     Estimation, and Testing.&rdquo; Econometrica 55:251-76.</p>
+
+<p>Franses, Philip Hans. Time Series Models for Business and Economic Forecasting. Cambridge:  Cambridge University Press, 1998.</p>
+
+<p>Jackman, Simon. 2005. “Pooling the Polls Over an Election Campaign.” Australian Journal of Political    Science 40: 499-517.</p>
+
+<p>Keele, Luke and Suzanna DeBoef. 2008. &ldquo;Taking Time Seriously: Dynamic Regression.&rdquo; American     Journal of Political Science 52: 184-200.</p>
+
+<p>Kwiatkowski, D., P.C.B. Phillips, P. Schmidt and Y. Shin. 1992. “Testing the Null Hypothesis of     Stationairty Against the Alternative of a Unit Root.” Journal of Econometrics 54: 159-78.</p>
+
+<p>Sims, C. 1980. &ldquo;Macroeconomics and Reality.&rdquo; Econometrica 48:1-48.</p>
+
+<p>Wawro, Gregrory. 2002. &ldquo;Estimating Dynamic Panel Models in Political Science.&rdquo; Political Analysis 10:   25-48.</p>
+
+<p>Williams, Laron and Guy Whitten “But Wait, There’s More! Maximizing Substantive Inferences from     TSCS    Models” <a href="http://christophergandrud.github.io/dynsim/">dynsim</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

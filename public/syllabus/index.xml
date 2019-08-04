@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Syllabus on 3K: Dynamics and Heterogeneity</title>
+    <link>https://essex2019-3k.netlify.com/syllabus/</link>
+    <description>Recent content in Syllabus on 3K: Dynamics and Heterogeneity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 19 May 2019 06:42:21 -0700</lastBuildDate>
+    
+	<atom:link href="https://essex2019-3k.netlify.com/syllabus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Syllabus for 3K-2019</title>
+      <link>https://essex2019-3k.netlify.com/syllabus/syllabus/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/syllabus/syllabus/</guid>
+      <description>Modelling Dynamics and Heterogeneity: Time Series, Cross-Sectional Time Series, and Panel Data Harold D. Clarke, University of Texas Dallas and Robert Walker, Willamette University 5-16 August (two week course / 35 hrs)
+TOPICS The Core and Related Problems of Heterogeneity and Dynamics  A Brief Review of Linear Models
+ Summary and Visualisation of Time Series and Panels
+ Using Stata and R to summarise and visualise single and multiple time series data</description>
+    </item>
+    
+  </channel>
+</rss>

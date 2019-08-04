@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/post/forecasts-and-highcharts/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/syllabus/</loc>
+    <lastmod>2019-05-19T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/code/acf-and-pacf-on-generated-data/</loc>
+    <lastmod>2019-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/about/about/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/lectures/about/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/syllabus/syllabus/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/day_1/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/day_2/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/day_3/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/day_4/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/day_5/</loc>
+    <lastmod>2019-05-15T06:28:26-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</loc>
+    <lastmod>2019-05-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/code/panel-summary/</loc>
+    <lastmod>2019-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</loc>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/blog/a-base-markdown/</loc>
+    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/about/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/blog/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/code/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/lectures/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/readings/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/arima/</loc>
+    <lastmod>2019-05-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/forecast/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/ggplot/</loc>
+    <lastmod>2019-05-11T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/panel-data/</loc>
+    <lastmod>2019-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/categories/panel-data/</loc>
+    <lastmod>2019-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/plot/</loc>
+    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/post/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/r/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/categories/r/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/r-markdown/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/regression/</loc>
+    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/</loc>
+    <lastmod>2019-05-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/tags/time-series/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://essex2019-3k.netlify.com/categories/time-series/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

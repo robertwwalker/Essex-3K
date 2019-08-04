@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on 3K: Dynamics and Heterogeneity</title>
+    <link>https://essex2019-3k.netlify.com/about/</link>
+    <description>Recent content in About on 3K: Dynamics and Heterogeneity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
+    
+	<atom:link href="https://essex2019-3k.netlify.com/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Instructors</title>
+      <link>https://essex2019-3k.netlify.com/about/about/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/about/about/</guid>
+      <description>Harold D. Clarke is Ashbel Smith Professor in the School of Economic, Political and Policy Sciences, University of Texas at Dallas, and adjunct Professor, Department of Government, University of Essex. His current research interests focus on the political economy of party support. He has published widely on this topic in journals such as the American Journal of Political Science, American Political Science Review, and British Journal of Political Science. He is chief editor of Electoral Studies.</description>
+    </item>
+    
+  </channel>
+</rss>

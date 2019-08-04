@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="3K: Dynamics and Heterogeneity">
+<meta name="description" content="Some Basic Time Series with Equities First, let me get some data using tidyquant.
+tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.">
+
+<meta property="og:title" content="Animating the Wealth Index of Selected Equities" />
+<meta property="og:description" content="Some Basic Time Series with Equities First, let me get some data using tidyquant.
+tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/" />
+<meta property="article:published_time" content="2019-05-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-11T00:00:00&#43;00:00"/>
+
+
+<title>
+
+
+     Animating the Wealth Index of Selected Equities 
+
+</title>
+<link rel="canonical" href="https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-04%2008%3a34%3a51.4862487%20-0700%20PDT%20m%3d%2b1.876957801">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-04%2008%3a34%3a51.4862487%20-0700%20PDT%20m%3d%2b1.876957801">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-04%2008%3a34%3a51.4862487%20-0700%20PDT%20m%3d%2b1.876957801">
+    
+        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-04%2008%3a34%3a51.4862487%20-0700%20PDT%20m%3d%2b1.876957801">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://essex2019-3k.netlify.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://essex2019-3k.netlify.com/"><img class="avatar" src="https://essex2019-3k.netlify.com/img/HLogo2.png" srcset="https://essex2019-3k.netlify.com/img/HLogo2.png 1x"></a>
+            
+            <a href="https://essex2019-3k.netlify.com/"><div class="name">3K: Dynamics and Heterogeneity</div></a>
+            
+              <h3 class="self-intro">Time Series and Panel Data</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://essex2019-3k.netlify.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://essex2019-3k.netlify.com/code/"><span>Code</span></a></li>
+                    
+                        <li class="nav-syllabus"><a href="https://essex2019-3k.netlify.com/syllabus/"><span>Syllabus</span></a></li>
+                    
+                        <li class="nav-lectures"><a href="https://essex2019-3k.netlify.com/lectures/"><span>Lectures</span></a></li>
+                    
+                        <li class="nav-readings"><a href="https://essex2019-3k.netlify.com/readings/"><span>Readings</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://essex2019-3k.netlify.com/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/robertwwalker" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/PieRatio" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:rwalker@willamette.edu"><img class="icon" src="https://essex2019-3k.netlify.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Animating the Wealth Index of Selected Equities
+
+</div>
+
+                    <div class="initials"><a href="https://essex2019-3k.netlify.com/">rww</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat May 11 2019 00:00:00 UTC'>May 11, 2019</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<h1 id="some-basic-time-series-with-equities">Some Basic Time Series with Equities</h1>
+
+<p>First, let me get some data using <code>tidyquant</code>.</p>
+
+<h2 id="tidyquant">tidyquant</h2>
+
+<p><code>tidyquant</code> automates a lot of equity research and calculation using <em>tidy</em> concepts.  I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent.  In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</p>
+
+<pre><code class="language-r">library(tidyquant)
+tq_index(&quot;SP500&quot;) %&gt;% filter(weight &gt; 0.011) %&gt;% select(symbol,company) -&gt; Tickers
+Tickers &lt;- Tickers %&gt;% filter(symbol!=&quot;BRK.B&quot;) %&gt;% filter(symbol!=&quot;GOOGL&quot;) %&gt;% filter(symbol!=&quot;JNJ&quot;)
+Eq.P &lt;- Tickers %&gt;%  tq_get(., from=&quot;2018/01/01&quot;, to=&quot;2019/05/01&quot;) 
+Returns &lt;- Eq.P %&gt;% group_by(symbol) %&gt;% tq_transmute(., adjusted, periodReturn, period=&quot;daily&quot;)
+CumulativeReturns &lt;- Eq.P %&gt;% 
+  group_by(symbol) %&gt;% 
+  tq_transmute(., adjusted, periodReturn, period=&quot;daily&quot;, type = &quot;log&quot;, col_rename = &quot;returns&quot;) %&gt;% 
+  mutate(wealth.index = 100 * cumprod(1 + returns))
+library(skimr)
+Returns %&gt;% skim()
+</code></pre>
+
+<pre><code>## Skim summary statistics
+##  n obs: 2997 
+##  n variables: 3 
+##  group variables: symbol 
+## 
+## -- Variable type:Date ----------------------
+##  symbol variable missing complete   n        min        max     median
+##    AAPL     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##    AMZN     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##      FB     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##    GOOG     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##     JPM     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##    MSFT     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##      PG     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##       V     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##     XOM     date       0      333 333 2018-01-02 2019-04-30 2018-08-29
+##  n_unique
+##       333
+##       333
+##       333
+##       333
+##       333
+##       333
+##       333
+##       333
+##       333
+## 
+## -- Variable type:numeric -------------------
+##  symbol      variable missing complete   n        mean    sd     p0
+##    AAPL daily.returns       0      333 333     0.00068 0.018 -0.1  
+##    AMZN daily.returns       0      333 333     0.0017  0.021 -0.078
+##      FB daily.returns       0      333 333     0.00047 0.023 -0.19 
+##    GOOG daily.returns       0      333 333     0.00048 0.017 -0.077
+##     JPM daily.returns       0      333 333     0.00042 0.014 -0.048
+##    MSFT daily.returns       0      333 333     0.0015  0.017 -0.054
+##      PG daily.returns       0      333 333 7e-04       0.012 -0.04 
+##       V daily.returns       0      333 333     0.0012  0.015 -0.048
+##     XOM daily.returns       0      333 333     6.9e-05 0.013 -0.057
+##      p25     p50    p75  p100     hist
+##  -0.008  0.0013  0.0094 0.07  &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2582&gt;&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0067 0.0021  0.013  0.094 &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2582&gt;&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0092 0.00072 0.012  0.11  &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2585&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.007  0.00092 0.011  0.065 &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2583&gt;&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0066 0       0.0078 0.047 &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2582&gt;&lt;U+2587&gt;&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0064 0.0022  0.01   0.076 &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2583&gt;&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0055 0.00082 0.0063 0.088 &lt;U+2581&gt;&lt;U+2582&gt;&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0055 0.0019  0.0082 0.07  &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2583&gt;&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+##  -0.0074 0.00074 0.0078 0.048 &lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2585&gt;&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+</code></pre>
+
+<p>The final line provides a summary of the returns.  Now let me plot the data.</p>
+
+<pre><code class="language-r">library(ggplot2)
+library(ggthemes)
+CumulativeReturns %&gt;% ggplot(., aes(x=date, y=wealth.index, color=symbol, group=symbol)) + geom_line() + labs(x=&quot;Date&quot;, y=&quot;Cumulative Wealth [Baseline 100]&quot;, color=&quot;Ticker&quot;) + theme_economist_white()
+</code></pre>
+
+<p><img src="https://essex2019-3k.netlify.com/blog/2019-05-16-some-basic-time-series-and-moving-average-stuff_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+
+<p>And because I can, let me deploy gganimate to reveal the data in an animation.</p>
+
+<pre><code class="language-r">library(gganimate)
+p &lt;- CumulativeReturns %&gt;% ggplot(., aes(x=date, y=wealth.index, color=symbol, group=symbol)) + geom_line() + labs(x=&quot;Date&quot;, y=&quot;Cumulative Wealth [Baseline 100]&quot;, color=&quot;Ticker&quot;) + theme_economist_white() + transition_reveal(date)
+animate(p)
+</code></pre>
+
+<p><img src="2019-05-16-some-basic-time-series-and-moving-average-stuff_files/figure-html/unnamed-chunk-2-1.gif" alt="" /><!-- --></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://essex2019-3k.netlify.com/tags/r">R</a>
+                  
+                    <a href="https://essex2019-3k.netlify.com/tags/time-series">time series</a>
+                  
+                    <a href="https://essex2019-3k.netlify.com/tags/ggplot">ggplot</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://essex2019-3k.netlify.com/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

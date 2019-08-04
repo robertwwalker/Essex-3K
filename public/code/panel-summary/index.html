@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="3K: Dynamics and Heterogeneity">
+<meta name="description" content="A summary function for panel data.
+xtsum &lt;- function(formula, data) { pform &lt;- terms(formula, data=data) unit &lt;- pform[[2]] vars &lt;- attr(pform, &quot;term.labels&quot;) cls &lt;- sapply(data, class) data &lt;- data %&gt;% select(which(cls%in%c(&quot;numeric&quot;,&quot;integer&quot;))) varnames &lt;- intersect(names(data),vars) sumfunc &lt;- function(data=data, varname, unit) { loc.unit &lt;- enquo(unit) varname &lt;- ensym(varname) ores &lt;- data %&gt;% filter(!is.na(!! varname)==TRUE) %&gt;% summarise( O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3), O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), O.min = min(`$`(data, !! varname), na.">
+
+<meta property="og:title" content="Summarising Panel Data" />
+<meta property="og:description" content="A summary function for panel data.
+xtsum &lt;- function(formula, data) { pform &lt;- terms(formula, data=data) unit &lt;- pform[[2]] vars &lt;- attr(pform, &quot;term.labels&quot;) cls &lt;- sapply(data, class) data &lt;- data %&gt;% select(which(cls%in%c(&quot;numeric&quot;,&quot;integer&quot;))) varnames &lt;- intersect(names(data),vars) sumfunc &lt;- function(data=data, varname, unit) { loc.unit &lt;- enquo(unit) varname &lt;- ensym(varname) ores &lt;- data %&gt;% filter(!is.na(!! varname)==TRUE) %&gt;% summarise( O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3), O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), O.min = min(`$`(data, !! varname), na." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://essex2019-3k.netlify.com/code/panel-summary/" />
+<meta property="article:published_time" content="2019-05-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-12T00:00:00&#43;00:00"/>
+
+
+<title>
+
+
+     Summarising Panel Data 
+
+</title>
+<link rel="canonical" href="https://essex2019-3k.netlify.com/code/panel-summary/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-04%2008%3a34%3a51.1014678%20-0700%20PDT%20m%3d%2b1.492176901">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-04%2008%3a34%3a51.1014678%20-0700%20PDT%20m%3d%2b1.492176901">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-04%2008%3a34%3a51.1014678%20-0700%20PDT%20m%3d%2b1.492176901">
+    
+        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-04%2008%3a34%3a51.1014678%20-0700%20PDT%20m%3d%2b1.492176901">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://essex2019-3k.netlify.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://essex2019-3k.netlify.com/"><img class="avatar" src="https://essex2019-3k.netlify.com/img/HLogo2.png" srcset="https://essex2019-3k.netlify.com/img/HLogo2.png 1x"></a>
+            
+            <a href="https://essex2019-3k.netlify.com/"><div class="name">3K: Dynamics and Heterogeneity</div></a>
+            
+              <h3 class="self-intro">Time Series and Panel Data</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://essex2019-3k.netlify.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://essex2019-3k.netlify.com/code/"><span>Code</span></a></li>
+                    
+                        <li class="nav-syllabus"><a href="https://essex2019-3k.netlify.com/syllabus/"><span>Syllabus</span></a></li>
+                    
+                        <li class="nav-lectures"><a href="https://essex2019-3k.netlify.com/lectures/"><span>Lectures</span></a></li>
+                    
+                        <li class="nav-readings"><a href="https://essex2019-3k.netlify.com/readings/"><span>Readings</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://essex2019-3k.netlify.com/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/robertwwalker" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/PieRatio" target="_blank" rel="noopener"><img class="icon" src="https://essex2019-3k.netlify.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:rwalker@willamette.edu"><img class="icon" src="https://essex2019-3k.netlify.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    Summarising Panel Data
+
+</div>
+
+            <div class="markdown">
+                
+
+<p>A summary function for panel data.</p>
+
+<pre><code class="language-r">xtsum &lt;- function(formula, data) {
+  pform &lt;- terms(formula, data=data)
+  unit &lt;- pform[[2]]
+  vars &lt;- attr(pform, &quot;term.labels&quot;)
+  cls &lt;- sapply(data, class)
+  data &lt;- data %&gt;% select(which(cls%in%c(&quot;numeric&quot;,&quot;integer&quot;)))
+  varnames &lt;- intersect(names(data),vars)
+  sumfunc &lt;- function(data=data, varname, unit) {
+  loc.unit &lt;- enquo(unit)
+  varname &lt;- ensym(varname)
+    ores &lt;- data %&gt;% filter(!is.na(!! varname)==TRUE) %&gt;% summarise(
+    O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3),
+    O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), 
+    O.min = min(`$`(data, !! varname), na.rm=TRUE), 
+    O.max=max(`$`(data, !! varname), na.rm=TRUE), 
+    O.SumSQ=round(sum(scale(`$`(data, !! varname), center=TRUE, scale=FALSE)^2, na.rm=TRUE), digits=3), 
+    O.N=sum(as.numeric((!is.na(`$`(data, !! varname))))))
+ bmeans &lt;- data %&gt;% filter(!is.na(!! varname)==TRUE) %&gt;% group_by(!! loc.unit) %&gt;% summarise(
+   meanx=mean(`$`(.data, !! varname), na.rm=T), 
+   t.count=sum(as.numeric(!is.na(`$`(.data, !! varname)))))
+    bres &lt;- bmeans %&gt;% ungroup() %&gt;% summarise(
+    B.mean = round(mean(meanx, na.rm=TRUE), digits=3),
+    B.sd = round(sd(meanx, na.rm=TRUE), digits=3),
+    B.min = min(meanx, na.rm=TRUE), 
+    B.max=max(meanx, na.rm=TRUE), 
+    B.Units=sum(as.numeric(!is.na(t.count))), 
+    B.t.bar=round(mean(t.count, na.rm=TRUE), digits=3))
+  wdat &lt;- data %&gt;% filter(!is.na(!! varname)==TRUE) %&gt;% group_by(!! loc.unit) %&gt;% mutate(
+    W.x = scale(`$`(.data,!! varname), scale=FALSE))
+  wres &lt;- wdat %&gt;% ungroup() %&gt;% summarise(
+    W.sd=round(sd(W.x, na.rm=TRUE), digits=3), 
+    W.min=min(W.x, na.rm=TRUE), 
+    W.max=max(W.x, na.rm=TRUE), 
+    W.SumSQ=round(sum(W.x^2, na.rm=TRUE), digits=3))
+    W.Ratio &lt;- round(wres$W.SumSQ/ores$O.SumSQ, digits=3)
+  return(c(ores,bres,wres,Within.Ovr.Ratio=W.Ratio))
+  }
+res1 &lt;- sapply(varnames, function(x) {sumfunc(data, !!x, !!unit)})
+return(data.frame(t(res1)))
+}  
+</code></pre>
+
+<p>The example to illustrate the function is global mortality from a previous tidyTuesday.</p>
+
+<pre><code class="language-r">library(skimr)
+library(tidyverse)
+library(rlang)
+library(kableExtra)
+# global_mortality &lt;- readRDS(&quot;../../data/global_mortality.rds&quot;)
+global_mortality &lt;- readRDS(url(&quot;https://github.com/robertwwalker/academic-mymod/raw/master/data/global_mortality.rds&quot;))
+global_mortality$countryF &lt;- as.factor(global_mortality$country)
+global_mortality$countryN &lt;- as.numeric(as.factor(global_mortality$country))
+names(global_mortality) &lt;- gsub(&quot; \\(%\\)&quot;,&quot;&quot;,names(global_mortality))
+# For some reason, the xtsum function does not respond to the weird variable names but will accept them devoid of (%)
+myxt.res &lt;- xtsum(countryN~., data=global_mortality)
+</code></pre>
+
+<h2 id="the-overall">The Overall</h2>
+
+<pre><code class="language-r">myxt.res %&gt;% select(starts_with(&quot;O.&quot;)) %&gt;% kableExtra::kable()
+</code></pre>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> O.mean </th>
+   <th style="text-align:left;"> O.sd </th>
+   <th style="text-align:left;"> O.min </th>
+   <th style="text-align:left;"> O.max </th>
+   <th style="text-align:left;"> O.SumSQ </th>
+   <th style="text-align:left;"> O.N </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;"> 2003 </td>
+   <td style="text-align:left;"> 7.79 </td>
+   <td style="text-align:left;"> 1990 </td>
+   <td style="text-align:left;"> 2016 </td>
+   <td style="text-align:left;"> 373464 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cancers </td>
+   <td style="text-align:left;"> 14.387 </td>
+   <td style="text-align:left;"> 8.154 </td>
+   <td style="text-align:left;"> 0.582272587715 </td>
+   <td style="text-align:left;"> 33.6174987032 </td>
+   <td style="text-align:left;"> 409267.071 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes </td>
+   <td style="text-align:left;"> 6.286 </td>
+   <td style="text-align:left;"> 4.436 </td>
+   <td style="text-align:left;"> 0.327132851997 </td>
+   <td style="text-align:left;"> 35.8161868396999 </td>
+   <td style="text-align:left;"> 121099.189 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dementia </td>
+   <td style="text-align:left;"> 3.221 </td>
+   <td style="text-align:left;"> 2.746 </td>
+   <td style="text-align:left;"> 0.0447517795879 </td>
+   <td style="text-align:left;"> 16.6724813569 </td>
+   <td style="text-align:left;"> 46417.872 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuberculosis </td>
+   <td style="text-align:left;"> 2.133 </td>
+   <td style="text-align:left;"> 2.648 </td>
+   <td style="text-align:left;"> 0.0108809115559 </td>
+   <td style="text-align:left;"> 16.4658613491 </td>
+   <td style="text-align:left;"> 43159.866 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suicide </td>
+   <td style="text-align:left;"> 1.391 </td>
+   <td style="text-align:left;"> 1.111 </td>
+   <td style="text-align:left;"> 0.101610325702999 </td>
+   <td style="text-align:left;"> 15.4120175726 </td>
+   <td style="text-align:left;"> 7591.252 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaria </td>
+   <td style="text-align:left;"> 1.801 </td>
+   <td style="text-align:left;"> 4.213 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 24.4259622088 </td>
+   <td style="text-align:left;"> 109251.359 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Homicide </td>
+   <td style="text-align:left;"> 0.983 </td>
+   <td style="text-align:left;"> 1.454 </td>
+   <td style="text-align:left;"> 0.0452020912394 </td>
+   <td style="text-align:left;"> 14.2292611619 </td>
+   <td style="text-align:left;"> 13007.955 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Meningitis </td>
+   <td style="text-align:left;"> 0.783 </td>
+   <td style="text-align:left;"> 0.967 </td>
+   <td style="text-align:left;"> 0.0279860443492 </td>
+   <td style="text-align:left;"> 6.98134580740999 </td>
+   <td style="text-align:left;"> 5760.664 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Drowning </td>
+   <td style="text-align:left;"> 0.714 </td>
+   <td style="text-align:left;"> 0.514 </td>
+   <td style="text-align:left;"> 0.053306377474 </td>
+   <td style="text-align:left;"> 4.5109478491 </td>
+   <td style="text-align:left;"> 1628.778 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hepatitis </td>
+   <td style="text-align:left;"> 0.161 </td>
+   <td style="text-align:left;"> 0.165 </td>
+   <td style="text-align:left;"> 0.00484788578833 </td>
+   <td style="text-align:left;"> 1.58328931261999 </td>
+   <td style="text-align:left;"> 167.675 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fire </td>
+   <td style="text-align:left;"> 0.334 </td>
+   <td style="text-align:left;"> 0.181 </td>
+   <td style="text-align:left;"> 0.0569132375453 </td>
+   <td style="text-align:left;"> 1.34368648669 </td>
+   <td style="text-align:left;"> 201.769 </td>
+   <td style="text-align:left;"> 6156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Conflict </td>
+   <td style="text-align:left;"> 0.291 </td>
+   <td style="text-align:left;"> 2.399 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 82.317 </td>
+   <td style="text-align:left;"> 27372.607 </td>
+   <td style="text-align:left;"> 4758 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Terrorism </td>
+   <td style="text-align:left;"> 0.037 </td>
+   <td style="text-align:left;"> 0.229 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 5.877 </td>
+   <td style="text-align:left;"> 250.161 </td>
+   <td style="text-align:left;"> 4758 </td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="the-between">The Between</h2>
+
+<pre><code class="language-r">myxt.res %&gt;% select(starts_with(&quot;B.&quot;)) %&gt;% kableExtra::kable()
+</code></pre>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> B.mean </th>
+   <th style="text-align:left;"> B.sd </th>
+   <th style="text-align:left;"> B.min </th>
+   <th style="text-align:left;"> B.max </th>
+   <th style="text-align:left;"> B.Units </th>
+   <th style="text-align:left;"> B.t.bar </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;"> 2003 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 2003 </td>
+   <td style="text-align:left;"> 2003 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cancers </td>
+   <td style="text-align:left;"> 14.387 </td>
+   <td style="text-align:left;"> 8.034 </td>
+   <td style="text-align:left;"> 3.10952579112629 </td>
+   <td style="text-align:left;"> 30.1971632247185 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes </td>
+   <td style="text-align:left;"> 6.286 </td>
+   <td style="text-align:left;"> 4.24 </td>
+   <td style="text-align:left;"> 1.18378662106407 </td>
+   <td style="text-align:left;"> 27.7054687485259 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dementia </td>
+   <td style="text-align:left;"> 3.221 </td>
+   <td style="text-align:left;"> 2.618 </td>
+   <td style="text-align:left;"> 0.273432691278518 </td>
+   <td style="text-align:left;"> 11.8213260531704 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuberculosis </td>
+   <td style="text-align:left;"> 2.133 </td>
+   <td style="text-align:left;"> 2.554 </td>
+   <td style="text-align:left;"> 0.0320558939470148 </td>
+   <td style="text-align:left;"> 14.8469776932555 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suicide </td>
+   <td style="text-align:left;"> 1.391 </td>
+   <td style="text-align:left;"> 1.086 </td>
+   <td style="text-align:left;"> 0.24411056203237 </td>
+   <td style="text-align:left;"> 12.1645728187674 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaria </td>
+   <td style="text-align:left;"> 1.801 </td>
+   <td style="text-align:left;"> 4.11 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 20.1040837006259 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Homicide </td>
+   <td style="text-align:left;"> 0.983 </td>
+   <td style="text-align:left;"> 1.425 </td>
+   <td style="text-align:left;"> 0.055930461119 </td>
+   <td style="text-align:left;"> 11.0613278720589 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Meningitis </td>
+   <td style="text-align:left;"> 0.783 </td>
+   <td style="text-align:left;"> 0.951 </td>
+   <td style="text-align:left;"> 0.0422193171260666 </td>
+   <td style="text-align:left;"> 5.31515565909333 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Drowning </td>
+   <td style="text-align:left;"> 0.714 </td>
+   <td style="text-align:left;"> 0.487 </td>
+   <td style="text-align:left;"> 0.0614298661120518 </td>
+   <td style="text-align:left;"> 3.51533070170296 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hepatitis </td>
+   <td style="text-align:left;"> 0.161 </td>
+   <td style="text-align:left;"> 0.158 </td>
+   <td style="text-align:left;"> 0.00815661061311407 </td>
+   <td style="text-align:left;"> 0.993252051033777 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fire </td>
+   <td style="text-align:left;"> 0.334 </td>
+   <td style="text-align:left;"> 0.168 </td>
+   <td style="text-align:left;"> 0.0700329635986741 </td>
+   <td style="text-align:left;"> 0.995006600195815 </td>
+   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Conflict </td>
+   <td style="text-align:left;"> 0.291 </td>
+   <td style="text-align:left;"> 0.921 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 9.32088461538462 </td>
+   <td style="text-align:left;"> 183 </td>
+   <td style="text-align:left;"> 26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Terrorism </td>
+   <td style="text-align:left;"> 0.037 </td>
+   <td style="text-align:left;"> 0.121 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 1.29896153846154 </td>
+   <td style="text-align:left;"> 183 </td>
+   <td style="text-align:left;"> 26 </td>
+  </tr>
+</tbody>
+</table>
+
+<h1 id="the-within">The Within</h1>
+
+<pre><code class="language-r">myxt.res %&gt;% select(starts_with(&quot;W.&quot;)) %&gt;% kableExtra::kable()
+</code></pre>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> W.sd </th>
+   <th style="text-align:left;"> W.min </th>
+   <th style="text-align:left;"> W.max </th>
+   <th style="text-align:left;"> W.SumSQ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;"> 7.79 </td>
+   <td style="text-align:left;"> -13 </td>
+   <td style="text-align:left;"> 13 </td>
+   <td style="text-align:left;"> 373464 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cancers </td>
+   <td style="text-align:left;"> 1.489 </td>
+   <td style="text-align:left;"> -8.01775678316665 </td>
+   <td style="text-align:left;"> 5.44955180565917 </td>
+   <td style="text-align:left;"> 13651.253 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes </td>
+   <td style="text-align:left;"> 1.331 </td>
+   <td style="text-align:left;"> -9.75005714192591 </td>
+   <td style="text-align:left;"> 10.9286704664144 </td>
+   <td style="text-align:left;"> 10897.803 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dementia </td>
+   <td style="text-align:left;"> 0.847 </td>
+   <td style="text-align:left;"> -5.18319310059962 </td>
+   <td style="text-align:left;"> 5.14501071395038 </td>
+   <td style="text-align:left;"> 4420.371 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuberculosis </td>
+   <td style="text-align:left;"> 0.72 </td>
+   <td style="text-align:left;"> -6.16989797402704 </td>
+   <td style="text-align:left;"> 7.15698179631445 </td>
+   <td style="text-align:left;"> 3193.133 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suicide </td>
+   <td style="text-align:left;"> 0.243 </td>
+   <td style="text-align:left;"> -2.2104640588474 </td>
+   <td style="text-align:left;"> 3.2474447538326 </td>
+   <td style="text-align:left;"> 364.808 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaria </td>
+   <td style="text-align:left;"> 0.963 </td>
+   <td style="text-align:left;"> -7.91665118507926 </td>
+   <td style="text-align:left;"> 6.90359583646668 </td>
+   <td style="text-align:left;"> 5711.216 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Homicide </td>
+   <td style="text-align:left;"> 0.303 </td>
+   <td style="text-align:left;"> -3.48785726948888 </td>
+   <td style="text-align:left;"> 3.16793328984112 </td>
+   <td style="text-align:left;"> 564.186 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Meningitis </td>
+   <td style="text-align:left;"> 0.187 </td>
+   <td style="text-align:left;"> -1.98472274401578 </td>
+   <td style="text-align:left;"> 2.16671435778937 </td>
+   <td style="text-align:left;"> 216.175 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Drowning </td>
+   <td style="text-align:left;"> 0.168 </td>
+   <td style="text-align:left;"> -1.77580790376296 </td>
+   <td style="text-align:left;"> 1.2747173861074 </td>
+   <td style="text-align:left;"> 174.405 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hepatitis </td>
+   <td style="text-align:left;"> 0.048 </td>
+   <td style="text-align:left;"> -0.394690387248851 </td>
+   <td style="text-align:left;"> 0.876379900818139 </td>
+   <td style="text-align:left;"> 14.147 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fire </td>
+   <td style="text-align:left;"> 0.069 </td>
+   <td style="text-align:left;"> -0.432961877175422 </td>
+   <td style="text-align:left;"> 0.872176100059926 </td>
+   <td style="text-align:left;"> 29.045 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Conflict </td>
+   <td style="text-align:left;"> 2.216 </td>
+   <td style="text-align:left;"> -9.32088461538462 </td>
+   <td style="text-align:left;"> 78.3840384615385 </td>
+   <td style="text-align:left;"> 23357.854 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Terrorism </td>
+   <td style="text-align:left;"> 0.195 </td>
+   <td style="text-align:left;"> -1.29896153846154 </td>
+   <td style="text-align:left;"> 4.57803846153846 </td>
+   <td style="text-align:left;"> 180.881 </td>
+  </tr>
+</tbody>
+</table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

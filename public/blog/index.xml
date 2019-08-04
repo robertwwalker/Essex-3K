@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 3K: Dynamics and Heterogeneity</title>
+    <link>https://essex2019-3k.netlify.com/blog/</link>
+    <description>Recent content in Blog on 3K: Dynamics and Heterogeneity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
+    
+	<atom:link href="https://essex2019-3k.netlify.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Forecasts and Highcharts</title>
+      <link>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</link>
+      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</guid>
+      <description>Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
+Use the forecast package to find an ARIMA model and forecast it for 50 periods.
+Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)library(forecast)library(highcharter)library(widgetframe)A.Stock &amp;lt;- &amp;quot;F&amp;quot; %&amp;gt;% tq_get(., from = &amp;quot;2018-01-01&amp;quot;)A.</description>
+    </item>
+    
+    <item>
+      <title>tidyquant</title>
+      <link>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</link>
+      <pubDate>Sat, 11 May 2019 21:13:14 -0500</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</guid>
+      <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
+tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
+    </item>
+    
+    <item>
+      <title>Animating the Wealth Index of Selected Equities</title>
+      <link>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</guid>
+      <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
+tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
+    </item>
+    
+    <item>
+      <title>A Template</title>
+      <link>https://essex2019-3k.netlify.com/blog/a-base-markdown/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/blog/a-base-markdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>
