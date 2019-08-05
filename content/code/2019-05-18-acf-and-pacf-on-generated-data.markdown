@@ -53,15 +53,15 @@ auto.arima(my.data)
 
 ```
 ## Series: my.data 
-## ARIMA(1,0,0) with zero mean 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##          ar1
-##       0.8590
-## s.e.  0.0501
+##           ar1
+##       -0.3176
+## s.e.   0.0947
 ## 
-## sigma^2 estimated as 1.213:  log likelihood=-151.73
-## AIC=307.46   AICc=307.58   BIC=312.67
+## sigma^2 estimated as 0.9515:  log likelihood=-137.56
+## AIC=279.13   AICc=279.25   BIC=284.32
 ```
 
 
@@ -77,15 +77,15 @@ summary(arima(my.data, order=c(2,0,0)))
 ## 
 ## Coefficients:
 ##          ar1     ar2  intercept
-##       0.7793  0.0914    -0.3456
-## s.e.  0.1002  0.1005     0.7935
+##       0.6384  0.2807    -1.3623
+## s.e.  0.0950  0.0949     1.0340
 ## 
-## sigma^2 estimated as 1.189:  log likelihood = -151.23,  aic = 310.45
+## sigma^2 estimated as 0.9081:  log likelihood = -137.93,  aic = 283.86
 ## 
 ## Training set error measures:
-##                      ME     RMSE       MAE      MPE    MAPE     MASE
-## Training set 0.01549515 1.090443 0.8491197 104.0357 151.285 0.942449
+##                        ME      RMSE       MAE      MPE     MAPE      MASE
+## Training set 0.0001928708 0.9529562 0.7534692 76.20425 139.1123 0.9337599
 ##                    ACF1
-## Training set 0.02498733
+## Training set 0.00904509
 ```
 

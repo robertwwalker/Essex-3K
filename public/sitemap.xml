@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/lectures/about/</loc>
+    <loc>https://essex2019-3k.netlify.com/lectures/lecture-1/</loc>
     <lastmod>2019-05-15T06:28:26-07:00</lastmod>
   </url>
   
@@ -137,13 +137,13 @@
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/categories/panel-data/</loc>
+    <loc>https://essex2019-3k.netlify.com/tags/panel-data/</loc>
     <lastmod>2019-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/tags/panel-data/</loc>
+    <loc>https://essex2019-3k.netlify.com/categories/panel-data/</loc>
     <lastmod>2019-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -161,13 +161,13 @@
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/categories/r/</loc>
+    <loc>https://essex2019-3k.netlify.com/tags/r/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/tags/r/</loc>
+    <loc>https://essex2019-3k.netlify.com/categories/r/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -191,13 +191,13 @@
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/categories/time-series/</loc>
+    <loc>https://essex2019-3k.netlify.com/tags/time-series/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/tags/time-series/</loc>
+    <loc>https://essex2019-3k.netlify.com/categories/time-series/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

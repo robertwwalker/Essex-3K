@@ -53,12 +53,13 @@ library(ggplot2) library(forecast) my.data &amp;lt;- arima.sim(list(ar=c(0.7,0.2
     </item>
     
     <item>
-      <title>Lecture 1 Reviewing Linear Models</title>
-      <link>https://essex2019-3k.netlify.com/lectures/about/</link>
+      <title>Lecture 1, Reviewing Linear Models</title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/about/</guid>
-      <description></description>
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-1/</guid>
+      <description>Lecture 1: A Review of Linear Models RWW
+Lab: Summarise one or more Time Series XT summaries and one or multiple line plots.</description>
     </item>
     
     <item>
