@@ -21,5 +21,15 @@
 Lab: Summarise one or more Time Series XT summaries and one or multiple line plots.</description>
     </item>
     
+    <item>
+      <title>Lecture 1, Reviewing Linear Models</title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-2/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
+      <description>Lecture 1: A Review of Linear Models RWW
+Lab: ARIMA on the Falklands</description>
+    </item>
+    
   </channel>
 </rss>
