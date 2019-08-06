@@ -18,7 +18,7 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
 library(haven)br7983 &lt;- read_dta(&quot;br7983.dta&quot;)A brief glimpse.
 head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat## 1 4.2 1.435085 NA 36.0 7907 -3 2.995732 15.8 41## 2 4.2 1.435085 0 36.0 7908 -4 2.944439 15.8 45## 3 4.2 1.435085 0 36.0 7909 0 3.135494 16.5 45## 4 4.2 1.435085 0 35.5 7910 0 3.135494 17." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://essex2019-3k.netlify.com/post/the-falklands/" />
+<meta property="og:url" content="https://essex2019-3k.netlify.com/blog/the-falklands/" />
 <meta property="article:published_time" content="2019-08-04T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-08-04T00:00:00&#43;00:00"/>
 
@@ -29,7 +29,7 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
      The Falklands 
 
 </title>
-<link rel="canonical" href="https://essex2019-3k.netlify.com/post/the-falklands/">
+<link rel="canonical" href="https://essex2019-3k.netlify.com/blog/the-falklands/">
 
 
 
@@ -47,11 +47,11 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
 
 
     
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-06%2016%3a26%3a24.7324426%20-0700%20PDT%20m%3d%2b0.716059401">
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-06%2016%3a26%3a24.7324426%20-0700%20PDT%20m%3d%2b0.716059401">
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-06%2016%3a26%3a24.7324426%20-0700%20PDT%20m%3d%2b0.716059401">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-06%2016%3a26%3a24.7124564%20-0700%20PDT%20m%3d%2b0.696073201">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-06%2016%3a26%3a24.7124564%20-0700%20PDT%20m%3d%2b0.696073201">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-06%2016%3a26%3a24.7124564%20-0700%20PDT%20m%3d%2b0.696073201">
     
-        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-06%2016%3a26%3a24.7324426%20-0700%20PDT%20m%3d%2b0.716059401">
+        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-06%2016%3a26%3a24.7124564%20-0700%20PDT%20m%3d%2b0.696073201">
     
 
 
@@ -194,15 +194,29 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
     </div>
 </section>
 
-<section class="main">
+
+<section class="main post non-narrow zero-top-spacing">
     <div class="container">
         <div class="content">
-            <div class="page-heading">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
     The Falklands
 
 </div>
 
+                    <div class="initials"><a href="https://essex2019-3k.netlify.com/">rww</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Aug 4 2019 00:00:00 UTC'>Aug 4, 2019</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
             <div class="markdown">
                 
 
@@ -236,9 +250,6 @@ br7983 &lt;- read_dta(&quot;br7983.dta&quot;)</code></pre>
 <p>It is important to note the sequence here. In the original data, Falklands measures from April. We may wish May. To do that</p>
 <pre class="r"><code>br7983$flandl &lt;- 0
 br7983$flandl[br7983$month &gt; 8204] &lt;- 1</code></pre>
-<p>The outcome of interest is <code>govpop</code>. What does it look like?</p>
-<pre class="r"><code>plot(br7983$govpop,x=as.factor(br7983$month), xlab=&quot;Time&quot;, ylab=&quot;Government Popularity&quot;, type=&quot;l&quot;)</code></pre>
-<p><img src="https://essex2019-3k.netlify.com/post/2019-08-04-the-falklands_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Some example models, use <code>TSA</code></p>
 <pre class="r"><code>library(TSA)</code></pre>
 <pre><code>## 
@@ -297,10 +308,27 @@ model</code></pre>
 ## 
 ## sigma^2 estimated as 6.378:  log likelihood = -113.19,  aic = 234.38</code></pre>
 
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://essex2019-3k.netlify.com/tags/r">R</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://essex2019-3k.netlify.com/blog">Back to posts</a></p>
             </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 

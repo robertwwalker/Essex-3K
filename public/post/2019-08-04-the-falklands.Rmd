@@ -191,6 +191,13 @@ br7983$flandl <- 0
 br7983$flandl[br7983$month > 8204] <- 1
 ```
 
+The outcome of interest is `govpop`.  What does it look like?
+
+```{r}
+plot(br7983$govpop,x=as.factor(br7983$month), xlab="Time", ylab="Government Popularity", type="l")
+```
+
+
 Some example models, use `TSA`
 
 ```{r}

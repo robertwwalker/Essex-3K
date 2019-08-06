@@ -40,9 +40,6 @@ br7983 &lt;- read_dta(&quot;br7983.dta&quot;)</code></pre>
 <p>It is important to note the sequence here. In the original data, Falklands measures from April. We may wish May. To do that</p>
 <pre class="r"><code>br7983$flandl &lt;- 0
 br7983$flandl[br7983$month &gt; 8204] &lt;- 1</code></pre>
-<p>The outcome of interest is <code>govpop</code>. What does it look like?</p>
-<pre class="r"><code>plot(br7983$govpop,x=as.factor(br7983$month), xlab=&quot;Time&quot;, ylab=&quot;Government Popularity&quot;, type=&quot;l&quot;)</code></pre>
-<p><img src="/post/2019-08-04-the-falklands_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Some example models, use <code>TSA</code></p>
 <pre class="r"><code>library(TSA)</code></pre>
 <pre><code>## 
