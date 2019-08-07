@@ -12,6 +12,16 @@
     
     
     <item>
+      <title></title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
+      <description>Lecture 3: Dynamic Regression Models RWW
+Lab: Catch Up with a simulator and some ARIMA</description>
+    </item>
+    
+    <item>
       <title>Lecture 1, Reviewing Linear Models</title>
       <link>https://essex2019-3k.netlify.com/lectures/lecture-1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
@@ -22,12 +32,12 @@ Lab: Summarise one or more Time Series XT summaries and one or multiple line plo
     </item>
     
     <item>
-      <title>Lecture 2, Basic Time Series</title>
+      <title>Lecture 2, ARMA and Stationarity</title>
       <link>https://essex2019-3k.netlify.com/lectures/lecture-2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
       <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
-      <description>Lecture 2: Stationarity and Univariate Models RWW
+      <description>Lecture 3: Stationarity and Univariate Models RWW
 Lab: ARIMA on the Falklands</description>
     </item>
     

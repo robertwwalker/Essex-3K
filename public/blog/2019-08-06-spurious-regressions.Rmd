@@ -1,0 +1,27 @@
+---
+title: Spurious Regressions
+author: RWW
+date: '2019-08-06'
+slug: spurious-regressions
+categories: []
+tags: []
+---
+
+Yule, in 1926, shows the consequences of regressing nonstationary series on one another.  To replicate his result via simulation, let's perform one.  First, to generate two nonstationary series.  Then regress them on each other and keep the p-value for the slope attached to $y_2$.
+
+```{r}
+library(tidyverse)
+Spurious <- function(junk) {
+y1 <- arima.sim(n=200, list(order=c(0,1,0)))
+y2 <- arima.sim(n=200, list(order=c(0,1,0)))
+return(summary(lm(y1~y2))$coefficients[2,4])
+}
+Spurious.Result <- data.frame(Res=sapply(1:1000, function(x) {Spurious(x)}))
+```
+
+Finally, let's plot the p-values.
+
+```{r}
+Spurious.Result %>% ggplot(., aes(x=Res)) + geom_histogram()
+```
+

@@ -6,10 +6,20 @@
     <description>Recent content on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://essex2019-3k.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spurious Regressions</title>
+      <link>https://essex2019-3k.netlify.com/blog/spurious-regressions/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/blog/spurious-regressions/</guid>
+      <description>Yule, in 1926, shows the consequences of regressing nonstationary series on one another. To replicate his result via simulation, let’s perform one. First, to generate two nonstationary series. Then regress them on each other and keep the p-value for the slope attached to \(y_2\).
+library(tidyverse)## -- Attaching packages --- tidyverse 1.2.1 --## v ggplot2 3.2.0 v purrr 0.3.2## v tibble 2.1.3 v dplyr 0.8.3## v tidyr 0.</description>
+    </item>
     
     <item>
       <title>The Falklands</title>
@@ -66,6 +76,16 @@ library(ggplot2) library(forecast) my.data &amp;lt;- arima.sim(list(ar=c(0.7,0.2
     </item>
     
     <item>
+      <title></title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
+      <description>Lecture 3: Dynamic Regression Models RWW
+Lab: Catch Up with a simulator and some ARIMA</description>
+    </item>
+    
+    <item>
       <title>Instructors</title>
       <link>https://essex2019-3k.netlify.com/about/about/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
@@ -85,12 +105,12 @@ Lab: Summarise one or more Time Series XT summaries and one or multiple line plo
     </item>
     
     <item>
-      <title>Lecture 2, Basic Time Series</title>
+      <title>Lecture 2, ARMA and Stationarity</title>
       <link>https://essex2019-3k.netlify.com/lectures/lecture-2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
       <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
-      <description>Lecture 2: Stationarity and Univariate Models RWW
+      <description>Lecture 3: Stationarity and Univariate Models RWW
 Lab: ARIMA on the Falklands</description>
     </item>
     

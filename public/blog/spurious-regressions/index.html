@@ -9,27 +9,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="3K: Dynamics and Heterogeneity">
-<meta name="description" content="Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
-Use the forecast package to find an ARIMA model and forecast it for 50 periods.
-Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)library(forecast)library(highcharter)library(widgetframe)A.Stock &lt;- &quot;F&quot; %&gt;% tq_get(., from = &quot;2018-01-01&quot;)A.">
+<meta name="description" content="Yule, in 1926, shows the consequences of regressing nonstationary series on one another. To replicate his result via simulation, let’s perform one. First, to generate two nonstationary series. Then regress them on each other and keep the p-value for the slope attached to \(y_2\).
+library(tidyverse)## -- Attaching packages --- tidyverse 1.2.1 --## v ggplot2 3.2.0 v purrr 0.3.2## v tibble 2.1.3 v dplyr 0.8.3## v tidyr 0.">
 
-<meta property="og:title" content="Forecasts and Highcharts" />
-<meta property="og:description" content="Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
-Use the forecast package to find an ARIMA model and forecast it for 50 periods.
-Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)library(forecast)library(highcharter)library(widgetframe)A.Stock &lt;- &quot;F&quot; %&gt;% tq_get(., from = &quot;2018-01-01&quot;)A." />
+<meta property="og:title" content="Spurious Regressions" />
+<meta property="og:description" content="Yule, in 1926, shows the consequences of regressing nonstationary series on one another. To replicate his result via simulation, let’s perform one. First, to generate two nonstationary series. Then regress them on each other and keep the p-value for the slope attached to \(y_2\).
+library(tidyverse)## -- Attaching packages --- tidyverse 1.2.1 --## v ggplot2 3.2.0 v purrr 0.3.2## v tibble 2.1.3 v dplyr 0.8.3## v tidyr 0." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/" />
-<meta property="article:published_time" content="2019-05-24T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-24T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://essex2019-3k.netlify.com/blog/spurious-regressions/" />
+<meta property="article:published_time" content="2019-08-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-08-06T00:00:00&#43;00:00"/>
 
 
 <title>
 
 
-     Forecasts and Highcharts 
+     Spurious Regressions 
 
 </title>
-<link rel="canonical" href="https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/">
+<link rel="canonical" href="https://essex2019-3k.netlify.com/blog/spurious-regressions/">
 
 
 
@@ -47,11 +45,11 @@
 
 
     
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-06%2017%3a51%3a39.3621426%20-0700%20PDT%20m%3d%2b0.595733301">
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-06%2017%3a51%3a39.3621426%20-0700%20PDT%20m%3d%2b0.595733301">
-    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-06%2017%3a51%3a39.3621426%20-0700%20PDT%20m%3d%2b0.595733301">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/reset.css?t=2019-08-06%2017%3a51%3a39.357146%20-0700%20PDT%20m%3d%2b0.590736701">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/pygments.css?t=2019-08-06%2017%3a51%3a39.357146%20-0700%20PDT%20m%3d%2b0.590736701">
+    <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/main.css?t=2019-08-06%2017%3a51%3a39.357146%20-0700%20PDT%20m%3d%2b0.590736701">
     
-        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-06%2017%3a51%3a39.3621426%20-0700%20PDT%20m%3d%2b0.595733301">
+        <link rel="stylesheet" href="https://essex2019-3k.netlify.com/css/override.css?t=2019-08-06%2017%3a51%3a39.357146%20-0700%20PDT%20m%3d%2b0.590736701">
     
 
 
@@ -202,7 +200,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    Forecasts and Highcharts
+    Spurious Regressions
 
 </div>
 
@@ -210,7 +208,7 @@
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Fri May 24 2019 00:00:00 UTC'>May 24, 2019</div>
+                    <div class="date" title='Tue Aug 6 2019 00:00:00 UTC'>Aug 6, 2019</div>
                     
                     
 		    <div class="reading-time"><div class="middot"></div>One minute read</div>
@@ -219,52 +217,30 @@
             </div>
             <div class="markdown">
                 
-<script src="https://essex2019-3k.netlify.com/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="https://essex2019-3k.netlify.com/rmarkdown-libs/pymjs/pym.v1.js"></script>
-<script src="https://essex2019-3k.netlify.com/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
 
 
-<div id="beautiful-forecasting-can-be-quick-and-easy" class="section level1">
-<h1>Beautiful forecasting can be quick and easy</h1>
-<ol style="list-style-type: decimal">
-<li>I will grab the adjusted closing price of Ford stock (<code>F</code>) from January 1, 2018.<br />
-</li>
-<li>Use the <code>forecast</code> package to find an ARIMA model and forecast it for 50 periods.<br />
-</li>
-<li>Use <code>highcharter</code> to plot it inside a framewidget that is appropriate with the markdown.</li>
-</ol>
-<pre class="r"><code>library(tidyquant)
-library(forecast)
-library(highcharter)
-library(widgetframe)
-A.Stock &lt;- &quot;F&quot; %&gt;% tq_get(., from = &quot;2018-01-01&quot;)
-A.Res &lt;- A.Stock %&gt;% select(date, adjusted) 
-A.Forecast &lt;- forecast(auto.arima(A.Res$adjusted), level=0.95, n=50)</code></pre>
-<p>I separated the plot line. Now to the result.</p>
-<pre class="r"><code>frameWidget(hchart(A.Forecast), width=600)</code></pre>
-<div id="htmlwidget-1" style="width:600px;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/blog/2019-05-24-forecasts-and-highcharts_files/figure-html//widgets/widget_FW1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
-<p>I wonder how easy it is to integrate the stock chart stuff.</p>
-<pre class="r"><code>frameWidget(hchart(A.Stock, type=&quot;stock&quot;), width = 600)</code></pre>
-<div id="htmlwidget-2" style="width:600px;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"url":"/blog/2019-05-24-forecasts-and-highcharts_files/figure-html//widgets/widget_SC1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
-</div>
+<p>Yule, in 1926, shows the consequences of regressing nonstationary series on one another. To replicate his result via simulation, let’s perform one. First, to generate two nonstationary series. Then regress them on each other and keep the p-value for the slope attached to <span class="math inline">\(y_2\)</span>.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages --- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.2.0     v purrr   0.3.2
+## v tibble  2.1.3     v dplyr   0.8.3
+## v tidyr   0.8.3     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.4.0</code></pre>
+<pre><code>## -- Conflicts ------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>Spurious &lt;- function(junk) {
+y1 &lt;- arima.sim(n=200, list(order=c(0,1,0)))
+y2 &lt;- arima.sim(n=200, list(order=c(0,1,0)))
+return(summary(lm(y1~y2))$coefficients[2,4])
+}
+Spurious.Result &lt;- data.frame(Res=sapply(1:1000, function(x) {Spurious(x)}))</code></pre>
+<p>Finally, let’s plot the p-values.</p>
+<pre class="r"><code>Spurious.Result %&gt;% ggplot(., aes(x=Res)) + geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="https://essex2019-3k.netlify.com/blog/2019-08-06-spurious-regressions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
                 <br>
-                
-                  <div class="tags">
-                    <strong>Tags:</strong>
-                  
-                    <a href="https://essex2019-3k.netlify.com/tags/forecast">forecast</a>
-                  
-                    <a href="https://essex2019-3k.netlify.com/tags/r">R</a>
-                  
-                    <a href="https://essex2019-3k.netlify.com/tags/r-markdown">R Markdown</a>
-                  
-                    <a href="https://essex2019-3k.netlify.com/tags/time-series">time series</a>
-                  
-                  </div>
-                  <br />
                 
                 <p class="back-to-posts"><a href="https://essex2019-3k.netlify.com/blog">Back to posts</a></p>
             </div>
