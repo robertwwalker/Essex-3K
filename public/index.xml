@@ -33,17 +33,6 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
     </item>
     
     <item>
-      <title>The Falklands</title>
-      <link>https://essex2019-3k.netlify.com/post/the-falklands/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://essex2019-3k.netlify.com/post/the-falklands/</guid>
-      <description>The data for the Falklands problem are shown below.
-library(haven)br7983 &amp;lt;- read_dta(&amp;quot;br7983.dta&amp;quot;)A brief glimpse.
-head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat## 1 4.2 1.435085 NA 36.0 7907 -3 2.995732 15.8 41## 2 4.2 1.435085 0 36.0 7908 -4 2.944439 15.8 45## 3 4.2 1.435085 0 36.0 7909 0 3.135494 16.5 45## 4 4.2 1.435085 0 35.5 7910 0 3.135494 17.</description>
-    </item>
-    
-    <item>
       <title>Forecasts and Highcharts</title>
       <link>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
@@ -52,17 +41,6 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
       <description>Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
 Use the forecast package to find an ARIMA model and forecast it for 50 periods.
 Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)library(forecast)library(highcharter)library(widgetframe)A.Stock &amp;lt;- &amp;quot;F&amp;quot; %&amp;gt;% tq_get(., from = &amp;quot;2018-01-01&amp;quot;)A.</description>
-    </item>
-    
-    <item>
-      <title>Forecasts and Highcharts</title>
-      <link>https://essex2019-3k.netlify.com/post/forecasts-and-highcharts/</link>
-      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://essex2019-3k.netlify.com/post/forecasts-and-highcharts/</guid>
-      <description>Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
-Use the forecast package to find an ARIMA model and forecast it for 50 periods.
-Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)## Loading required package: lubridate## ## Attaching package: &amp;#39;lubridate&amp;#39;## The following object is masked from &amp;#39;package:base&amp;#39;:## ## date## Loading required package: PerformanceAnalytics## Loading required package: xts## Loading required package: zoo## ## Attaching package: &amp;#39;zoo&amp;#39;## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## as.</description>
     </item>
     
     <item>

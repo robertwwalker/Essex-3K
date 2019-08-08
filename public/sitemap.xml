@@ -13,17 +13,7 @@
   </url>
   
   <url>
-    <loc>https://essex2019-3k.netlify.com/post/the-falklands/</loc>
-    <lastmod>2019-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</loc>
-    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://essex2019-3k.netlify.com/post/forecasts-and-highcharts/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -181,12 +171,6 @@
   <url>
     <loc>https://essex2019-3k.netlify.com/tags/plot/</loc>
     <lastmod>2019-05-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://essex2019-3k.netlify.com/post/</loc>
-    <lastmod>2019-08-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
