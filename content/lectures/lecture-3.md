@@ -7,6 +7,6 @@ title: Lecture 3, Dynamic Models
   
   ![AltText](/img/HLogo.jpg)
 
-Lecture 3: Dynamic Regression Models [RWW](../pdf/Lecture-Day3-2019.pdf)
+Lecture 3: Dynamic Regression Models [RWW](../pdf/slides-2019-RWW-Through-Day3.pdf)
 
 Lab: Catch Up with a simulator and some ARIMA
