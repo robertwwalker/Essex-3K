@@ -54,26 +54,6 @@ library(ggplot2) library(forecast) my.data &amp;lt;- arima.sim(list(ar=c(0.7,0.2
     </item>
     
     <item>
-      <title></title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
-      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
-      
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
-      <description>Lecture 3: Dynamic Regression Models RWW
-Lab: Catch Up with a simulator and some ARIMA</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-4/</link>
-      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
-      
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-4/</guid>
-      <description>Lecture 4: Models of Equilibration RWW
-Harold joins us to discuss his work in this.</description>
-    </item>
-    
-    <item>
       <title>Instructors</title>
       <link>https://essex2019-3k.netlify.com/about/about/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
@@ -100,6 +80,26 @@ Lab: Summarise one or more Time Series XT summaries and one or multiple line plo
       <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
       <description>Lecture 3: Stationarity and Univariate Models RWW
 Lab: ARIMA on the Falklands</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3, Dynamic Models</title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
+      <description>Lecture 3: Dynamic Regression Models RWW
+Lab: Catch Up with a simulator and some ARIMA</description>
+    </item>
+    
+    <item>
+      <title>Lecture 4, Cointegration</title>
+      <link>https://essex2019-3k.netlify.com/lectures/lecture-4/</link>
+      <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
+      
+      <guid>https://essex2019-3k.netlify.com/lectures/lecture-4/</guid>
+      <description>Lecture 4: Models of Equilibration RWW
+Harold joins us to discuss his work in this.</description>
     </item>
     
     <item>
