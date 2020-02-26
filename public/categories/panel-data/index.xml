@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Panel Data on 3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/categories/panel-data/</link>
+    <link>/categories/panel-data/</link>
     <description>Recent content in Panel Data on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 12 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/categories/panel-data/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/panel-data/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Summarising Panel Data</title>
-      <link>https://essex2019-3k.netlify.com/code/panel-summary/</link>
+      <link>/code/panel-summary/</link>
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/code/panel-summary/</guid>
+      <guid>/code/panel-summary/</guid>
       <description>A summary function for panel data.
 xtsum &amp;lt;- function(formula, data) { pform &amp;lt;- terms(formula, data=data) unit &amp;lt;- pform[[2]] vars &amp;lt;- attr(pform, &amp;quot;term.labels&amp;quot;) cls &amp;lt;- sapply(data, class) data &amp;lt;- data %&amp;gt;% select(which(cls%in%c(&amp;quot;numeric&amp;quot;,&amp;quot;integer&amp;quot;))) varnames &amp;lt;- intersect(names(data),vars) sumfunc &amp;lt;- function(data=data, varname, unit) { loc.unit &amp;lt;- enquo(unit) varname &amp;lt;- ensym(varname) ores &amp;lt;- data %&amp;gt;% filter(!is.na(!! varname)==TRUE) %&amp;gt;% summarise( O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3), O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), O.min = min(`$`(data, !! varname), na.</description>
     </item>

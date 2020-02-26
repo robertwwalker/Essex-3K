@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ggplot on 3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/tags/ggplot/</link>
+    <link>/tags/ggplot/</link>
     <description>Recent content in Ggplot on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 11 May 2019 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/tags/ggplot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ggplot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tidyquant</title>
-      <link>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</link>
+      <link>/blog/some-basic-time-series-and-moving-average-stuff/</link>
       <pubDate>Sat, 11 May 2019 21:13:14 -0500</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</guid>
+      <guid>/blog/some-basic-time-series-and-moving-average-stuff/</guid>
       <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
 tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
     </item>
     
     <item>
       <title>Animating the Wealth Index of Selected Equities</title>
-      <link>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</link>
+      <link>/blog/tidyquant-meets-gganimate/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</guid>
+      <guid>/blog/tidyquant-meets-gganimate/</guid>
       <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
 tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
     </item>

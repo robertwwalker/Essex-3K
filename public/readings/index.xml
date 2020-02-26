@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Readings for 3K by topic on 3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/readings/</link>
+    <link>/readings/</link>
     <description>Recent content in Readings for 3K by topic on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/readings/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/readings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Topic 1 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_1/</link>
+      <link>/readings/day_1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_1/</guid>
+      <guid>/readings/day_1/</guid>
       <description>Day 1 Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 1.
 Hsiao, Cheng, Why Panel Data? (September 6, 2005). IEPR Working Paper No. 05.33. Available at SSRN: https://ssrn.com/abstract=820204 or http://dx.doi.org/10.2139/ssrn.820204 or here</description>
     </item>
     
     <item>
       <title>Topic 2 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_2/</link>
+      <link>/readings/day_2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_2/</guid>
+      <guid>/readings/day_2/</guid>
       <description>Univariate ARIMA Models Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 2 and 5. Optional but strongly encouraged is their Appendix on Difference Equations.
 ARIMA Models in R. From Hyndman
 Falklands Intervention Clarke, et. al.. Harold will discuss this in the last 1.25 hours.</description>
@@ -34,20 +34,20 @@ Falklands Intervention Clarke, et. al.. Harold will discuss this in the last 1.2
     
     <item>
       <title>Topic 3 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_3/</link>
+      <link>/readings/day_3/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_3/</guid>
+      <guid>/readings/day_3/</guid>
       <description>Time Series Regression Models Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 3 and 4.
 Williams and Whitten, But Wait... dynsim</description>
     </item>
     
     <item>
       <title>Topic 4 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_4/</link>
+      <link>/readings/day_4/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_4/</guid>
+      <guid>/readings/day_4/</guid>
       <description>Cointegration and Error Correction Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 6.
 Cointegration and ECM in R. From Colonescu, Chs. 12 and 13
 Harold will discuss: Major&amp;rsquo;s lesser (not minor) effects: prime ministerial approval and governing party support in Britain since 1979</description>
@@ -55,10 +55,10 @@ Harold will discuss: Major&amp;rsquo;s lesser (not minor) effects: prime ministe
     
     <item>
       <title>Topic 5 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_5/</link>
+      <link>/readings/day_5/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_5/</guid>
+      <guid>/readings/day_5/</guid>
       <description>Heterogeneity in Single Time Series Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 7.
 ARCH and GARCH From Colonescu, Chs. 14
 Harold will talk about two of his pieces on this. They cover examples of ARCH/GARCH. They are:

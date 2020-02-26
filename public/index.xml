@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/</link>
+    <link>/</link>
     <description>Recent content on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Spurious Regressions</title>
-      <link>https://essex2019-3k.netlify.com/blog/spurious-regressions/</link>
+      <link>/blog/spurious-regressions/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/spurious-regressions/</guid>
+      <guid>/blog/spurious-regressions/</guid>
       <description>Yule, in 1926, shows the consequences of regressing nonstationary series on one another. To replicate his result via simulation, let’s perform one. First, to generate two nonstationary series. Then regress them on each other and keep the p-value for the slope attached to \(y_2\).
 library(tidyverse)## -- Attaching packages --- tidyverse 1.2.1 --## v ggplot2 3.2.0 v purrr 0.3.2## v tibble 2.1.3 v dplyr 0.8.3## v tidyr 0.</description>
     </item>
     
     <item>
       <title>The Falklands</title>
-      <link>https://essex2019-3k.netlify.com/blog/the-falklands/</link>
+      <link>/blog/the-falklands/</link>
       <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/the-falklands/</guid>
+      <guid>/blog/the-falklands/</guid>
       <description>The data for the Falklands problem are shown below.
 library(haven)br7983 &amp;lt;- read_dta(&amp;quot;br7983.dta&amp;quot;)A brief glimpse.
 head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat## 1 4.2 1.435085 NA 36.0 7907 -3 2.995732 15.8 41## 2 4.2 1.435085 0 36.0 7908 -4 2.944439 15.8 45## 3 4.2 1.435085 0 36.0 7909 0 3.135494 16.5 45## 4 4.2 1.435085 0 35.5 7910 0 3.135494 17.</description>
@@ -34,10 +34,10 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
     
     <item>
       <title>Forecasts and Highcharts</title>
-      <link>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</link>
+      <link>/blog/forecasts-and-highcharts/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/forecasts-and-highcharts/</guid>
+      <guid>/blog/forecasts-and-highcharts/</guid>
       <description>Beautiful forecasting can be quick and easyI will grab the adjusted closing price of Ford stock (F) from January 1, 2018.
 Use the forecast package to find an ARIMA model and forecast it for 50 periods.
 Use highcharter to plot it inside a framewidget that is appropriate with the markdown.library(tidyquant)library(forecast)library(highcharter)library(widgetframe)A.Stock &amp;lt;- &amp;quot;F&amp;quot; %&amp;gt;% tq_get(., from = &amp;quot;2018-01-01&amp;quot;)A.</description>
@@ -45,69 +45,69 @@ head(br7983)## empx empxl empxld govpop month pexnew pexnewl retailpj thatsat#
     
     <item>
       <title>ACF and PACF on Generated Data</title>
-      <link>https://essex2019-3k.netlify.com/code/acf-and-pacf-on-generated-data/</link>
+      <link>/code/acf-and-pacf-on-generated-data/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/code/acf-and-pacf-on-generated-data/</guid>
+      <guid>/code/acf-and-pacf-on-generated-data/</guid>
       <description>Simulating Data Simulating data under an ARIMA model in R is made rather easy. From the documentation on arima in stats, we obtain that $$ X_t = a1 X{t-1} + a{2} X{t-2} + \ldots + a{p} X{t-p} + b1 \epsilon{t-1} + b[2] \epsilon{t-2} + \ldots + b{q} \epsilon{t-q} $$ by construction. This can be adjusted with the rand.gen argument.
 library(ggplot2) library(forecast) my.data &amp;lt;- arima.sim(list(ar=c(0.7,0.2)), n=100) my.data2 &amp;lt;- data.frame(x=seq(1,100), y=my.data) ggplot(my.</description>
     </item>
     
     <item>
       <title>Instructors</title>
-      <link>https://essex2019-3k.netlify.com/about/about/</link>
+      <link>/about/about/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/about/about/</guid>
+      <guid>/about/about/</guid>
       <description>Harold D. Clarke is Ashbel Smith Professor in the School of Economic, Political and Policy Sciences, University of Texas at Dallas, and adjunct Professor, Department of Government, University of Essex. His current research interests focus on the political economy of party support. He has published widely on this topic in journals such as the American Journal of Political Science, American Political Science Review, and British Journal of Political Science. He is chief editor of Electoral Studies.</description>
     </item>
     
     <item>
       <title>Lecture 1, Reviewing Linear Models</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-1/</link>
+      <link>/lectures/lecture-1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-1/</guid>
+      <guid>/lectures/lecture-1/</guid>
       <description>Lecture 1: A Review of Linear Models RWW
 Lab: Summarise one or more Time Series XT summaries and one or multiple line plots.</description>
     </item>
     
     <item>
       <title>Lecture 2, ARMA and Stationarity</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-2/</link>
+      <link>/lectures/lecture-2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
+      <guid>/lectures/lecture-2/</guid>
       <description>Lecture 3: Stationarity and Univariate Models RWW
 Lab: ARIMA on the Falklands</description>
     </item>
     
     <item>
       <title>Lecture 3, Dynamic Models</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
+      <link>/lectures/lecture-3/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
+      <guid>/lectures/lecture-3/</guid>
       <description>Lecture 3: Dynamic Regression Models RWW
 Lab: Catch Up with a simulator and some ARIMA</description>
     </item>
     
     <item>
       <title>Lecture 4, Cointegration</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-4/</link>
+      <link>/lectures/lecture-4/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-4/</guid>
+      <guid>/lectures/lecture-4/</guid>
       <description>Lecture 4: Models of Equilibration RWW
 Harold joins us to discuss his work in this.</description>
     </item>
     
     <item>
       <title>Syllabus for 3K-2019</title>
-      <link>https://essex2019-3k.netlify.com/syllabus/syllabus/</link>
+      <link>/syllabus/syllabus/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/syllabus/syllabus/</guid>
+      <guid>/syllabus/syllabus/</guid>
       <description>Modelling Dynamics and Heterogeneity: Time Series, Cross-Sectional Time Series, and Panel Data Harold D. Clarke, University of Texas Dallas and Robert Walker, Willamette University 5-16 August (two week course / 35 hrs)
 TOPICS The Core and Related Problems of Heterogeneity and Dynamics  A Brief Review of Linear Models
  Summary and Visualisation of Time Series and Panels
@@ -116,20 +116,20 @@ TOPICS The Core and Related Problems of Heterogeneity and Dynamics  A Brief Revi
     
     <item>
       <title>Topic 1 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_1/</link>
+      <link>/readings/day_1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_1/</guid>
+      <guid>/readings/day_1/</guid>
       <description>Day 1 Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 1.
 Hsiao, Cheng, Why Panel Data? (September 6, 2005). IEPR Working Paper No. 05.33. Available at SSRN: https://ssrn.com/abstract=820204 or http://dx.doi.org/10.2139/ssrn.820204 or here</description>
     </item>
     
     <item>
       <title>Topic 2 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_2/</link>
+      <link>/readings/day_2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_2/</guid>
+      <guid>/readings/day_2/</guid>
       <description>Univariate ARIMA Models Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 2 and 5. Optional but strongly encouraged is their Appendix on Difference Equations.
 ARIMA Models in R. From Hyndman
 Falklands Intervention Clarke, et. al.. Harold will discuss this in the last 1.25 hours.</description>
@@ -137,20 +137,20 @@ Falklands Intervention Clarke, et. al.. Harold will discuss this in the last 1.2
     
     <item>
       <title>Topic 3 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_3/</link>
+      <link>/readings/day_3/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_3/</guid>
+      <guid>/readings/day_3/</guid>
       <description>Time Series Regression Models Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 3 and 4.
 Williams and Whitten, But Wait... dynsim</description>
     </item>
     
     <item>
       <title>Topic 4 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_4/</link>
+      <link>/readings/day_4/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_4/</guid>
+      <guid>/readings/day_4/</guid>
       <description>Cointegration and Error Correction Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 6.
 Cointegration and ECM in R. From Colonescu, Chs. 12 and 13
 Harold will discuss: Major&amp;rsquo;s lesser (not minor) effects: prime ministerial approval and governing party support in Britain since 1979</description>
@@ -158,10 +158,10 @@ Harold will discuss: Major&amp;rsquo;s lesser (not minor) effects: prime ministe
     
     <item>
       <title>Topic 5 Readings</title>
-      <link>https://essex2019-3k.netlify.com/readings/day_5/</link>
+      <link>/readings/day_5/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/readings/day_5/</guid>
+      <guid>/readings/day_5/</guid>
       <description>Heterogeneity in Single Time Series Box-Steffensmeier, Freeman, Hitt, and Pevehouse, Chapter 7.
 ARCH and GARCH From Colonescu, Chs. 14
 Harold will talk about two of his pieces on this. They cover examples of ARCH/GARCH. They are:
@@ -172,43 +172,76 @@ Clarke, Whiteley, Borges, Sanders, and Stewart. 2016. Modelling the dynamics of 
     
     <item>
       <title>tidyquant</title>
-      <link>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</link>
+      <link>/blog/some-basic-time-series-and-moving-average-stuff/</link>
       <pubDate>Sat, 11 May 2019 21:13:14 -0500</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/some-basic-time-series-and-moving-average-stuff/</guid>
+      <guid>/blog/some-basic-time-series-and-moving-average-stuff/</guid>
       <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
 tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
     </item>
     
     <item>
       <title>Summarising Panel Data</title>
-      <link>https://essex2019-3k.netlify.com/code/panel-summary/</link>
+      <link>/code/panel-summary/</link>
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/code/panel-summary/</guid>
+      <guid>/code/panel-summary/</guid>
       <description>A summary function for panel data.
 xtsum &amp;lt;- function(formula, data) { pform &amp;lt;- terms(formula, data=data) unit &amp;lt;- pform[[2]] vars &amp;lt;- attr(pform, &amp;quot;term.labels&amp;quot;) cls &amp;lt;- sapply(data, class) data &amp;lt;- data %&amp;gt;% select(which(cls%in%c(&amp;quot;numeric&amp;quot;,&amp;quot;integer&amp;quot;))) varnames &amp;lt;- intersect(names(data),vars) sumfunc &amp;lt;- function(data=data, varname, unit) { loc.unit &amp;lt;- enquo(unit) varname &amp;lt;- ensym(varname) ores &amp;lt;- data %&amp;gt;% filter(!is.na(!! varname)==TRUE) %&amp;gt;% summarise( O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3), O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), O.min = min(`$`(data, !! varname), na.</description>
     </item>
     
     <item>
       <title>Animating the Wealth Index of Selected Equities</title>
-      <link>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</link>
+      <link>/blog/tidyquant-meets-gganimate/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/tidyquant-meets-gganimate/</guid>
+      <guid>/blog/tidyquant-meets-gganimate/</guid>
       <description>Some Basic Time Series with Equities First, let me get some data using tidyquant.
 tidyquant tidyquant automates a lot of equity research and calculation using tidy concepts. I will first use it to get the components of the S and P 500 and pick out those with weights over 1.1 percent. In the next step, I download the data and finally calculate daily returns and a cumulative wealth index.</description>
     </item>
     
     <item>
       <title>A Template</title>
-      <link>https://essex2019-3k.netlify.com/blog/a-base-markdown/</link>
+      <link>/blog/a-base-markdown/</link>
       <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/blog/a-base-markdown/</guid>
+      <guid>/blog/a-base-markdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Les Misérables by Victor Hugo</title>
+      <link>/blog/les-mis%C3%A9rables-by-victor-hugo/</link>
+      <pubDate>Mon, 21 Dec 2015 04:05:25 -0600</pubDate>
+      
+      <guid>/blog/les-mis%C3%A9rables-by-victor-hugo/</guid>
+      <description>Although this detail has no connection whatever with the real substance of what we are about to relate, it will not be superfluous, if merely for the sake of exactness in all points, to mention here the various rumors and remarks which had been in circulation about him from the very moment when he arrived in the diocese.
+Bool True or false, that which is said of men often occupies as important a place in their lives, and above all in their destinies, as that which they do.</description>
+    </item>
+    
+    <item>
+      <title>Metamorphosis by Franz Kafka</title>
+      <link>/blog/metamorphosis-by-franz-kafka/</link>
+      <pubDate>Mon, 21 Dec 2015 04:03:46 -0600</pubDate>
+      
+      <guid>/blog/metamorphosis-by-franz-kafka/</guid>
+      <description>Part One One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+ He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
+ The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</description>
+    </item>
+    
+    <item>
+      <title>Use @ instead of HEAD</title>
+      <link>/blog/use-at-instead-of-head/</link>
+      <pubDate>Tue, 25 Aug 2015 17:09:14 -0500</pubDate>
+      
+      <guid>/blog/use-at-instead-of-head/</guid>
+      <description>I recently discovered that from git version 1.8.5 onwards, @ can replace HEAD:
+$ git reset --hard @~2 $ git rebase -i @~10 $ git diff @~2..@~3  And also in most scenarios HEAD can be left out completely, so you can say:
+$ git reset -- @{2}  instead of:
+$ git reset -- HEAD@{2}  It takes some getting used to, but it&amp;rsquo;s definitely faster than typing HEAD.</description>
     </item>
     
   </channel>

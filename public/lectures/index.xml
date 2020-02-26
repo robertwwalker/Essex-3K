@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lectures on 3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/lectures/</link>
+    <link>/lectures/</link>
     <description>Recent content in Lectures on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/lectures/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/lectures/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lecture 1, Reviewing Linear Models</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-1/</link>
+      <link>/lectures/lecture-1/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-1/</guid>
+      <guid>/lectures/lecture-1/</guid>
       <description>Lecture 1: A Review of Linear Models RWW
 Lab: Summarise one or more Time Series XT summaries and one or multiple line plots.</description>
     </item>
     
     <item>
       <title>Lecture 2, ARMA and Stationarity</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-2/</link>
+      <link>/lectures/lecture-2/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-2/</guid>
+      <guid>/lectures/lecture-2/</guid>
       <description>Lecture 3: Stationarity and Univariate Models RWW
 Lab: ARIMA on the Falklands</description>
     </item>
     
     <item>
       <title>Lecture 3, Dynamic Models</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-3/</link>
+      <link>/lectures/lecture-3/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-3/</guid>
+      <guid>/lectures/lecture-3/</guid>
       <description>Lecture 3: Dynamic Regression Models RWW
 Lab: Catch Up with a simulator and some ARIMA</description>
     </item>
     
     <item>
       <title>Lecture 4, Cointegration</title>
-      <link>https://essex2019-3k.netlify.com/lectures/lecture-4/</link>
+      <link>/lectures/lecture-4/</link>
       <pubDate>Wed, 15 May 2019 06:28:26 -0700</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/lectures/lecture-4/</guid>
+      <guid>/lectures/lecture-4/</guid>
       <description>Lecture 4: Models of Equilibration RWW
 Harold joins us to discuss his work in this.</description>
     </item>

@@ -24,76 +24,80 @@ title: Syllabus for 3K-2019
 2. Summary and Visualisation of Time Series and Panels  
    + Using Stata and R to summarise and visualise single and multiple time series data  
    + The T = B + W decomposition [PanelSummary](/code/panelsummary/)  
-   + Reading: [Day 1 Readings](/readings/day_1/)  
-
-3. [Day 2] Univariate Time Series
-   + Specification, estimation and diagnostics  
-   + Forecasting with ARIMA models  
-   + `forecast; auto.arima`; `ts::arimax`  
-   + Interventions  
    + Stationarity  
    + Unit-Root tests: `fSeries::UnitrootTests` and `plm::purtest`  
-   + Reading: [Day 2 Readings](/readings/day_2/)   
-   + Applications: Clarke, Mishler and Whiteley, "Recapturing the Falklands"  
+   + Specification, estimation and diagnostics  
+   + Forecasting with ARIMA models  
+   + `forecast; auto.arima`  
+3. Reading: [Topic 1 Readings](/readings/day_1/) and Textbook  
 
-## Dynamic Regressions
+## Basics of Time Series and Panel Regression
 
-1. [Day 3] Heterogeneity over Time  
-  +  the lagged dependent variable [and dynsim]
+1. Introductory Time Series and Panel Models  
+  +  Interventions and Transfer Functions  
   +  Specification, estimation and diagnostics  
-  +  VAR
-  +  ADL
-  + interpretation
-2. Reading: [Day 3 Readings](/readings/day_3/)  
+  +  Exogeneity testing  
+  +  Fixed and random effects and Hausman  
+  +  `ts::arimax` and arfima and `plm`  
+2. Reading: [Topic 2 Readings](/readings/day_2/) and Textbook  
+3. Representative Applications: Clarke, Mishler and Whiteley, "Recapturing the Falklands" and Panel Data Specification Comparison   
 
-## The Short and Long-Run
+## Variance and Covariance  
 
-1.  Cointegration, ECM, and Vector Error Correction
+3.  ARCH and GARCH, Clusters, and PCSE  
+  + Volatility and conditional heteroscedasticity in financial and public opinion data  
+  + Multivariate generalizations: Clusters and PCSE   
+  + `rugrach` and `pcse`  
+2. Reading: [Topic 3 Readings](/readings/day_3/)  
+3. Representative Applications: Clarke et al., 2009: ch. 4 (ARCH Models of Public Opinion); Lebo and Box-Steffensmeier, "Dynamic Conditional Correlations"; Wilson and Butler for survey and applications of PCSE 
+
+
+## The Short and Long-Run Revisited
+
+1.  Cointegration, ECM, Vector Autoregression and Vector Error Correction
 	+ Non-stationary processes - implications and testing
 	+ Dynamic equilibria and cointegrated processes
 	+ Structural and Reduced Forms
+	+ VAR, MAR and Forecasting
 	+ VECM Models
 	+ `tsDyn, ecm`
-2. Applications:
-3. Reading: [Day 4 Readings](/readings/day_4/)
-
-## Heterogeneity, Part I  
-
-1.  ARCH and GARCH and Breaks  
-  + Volatility and conditional heteroscedasticity in financial and public opinion data  
-  + `rugarch`  
-  + Structural Breaks [old school and Park's Bayes work]
-2. Reading: [Day 5 Readings](/readings/day_5/)  
-3. Applications: Clarke et al., 2009: ch. 4 (ARCH Models of Public Opinion)  
-  + Applications: Park: Bayesian Structural Breaks  
-
-
+2. Reading: Textbook  
+3. Representative Applications: Prime Ministerial Approval and Governing Party Support in Britain
 
 ## Varying Parameters
 
 1.  Varying Coefficients Models in Time and Space
 	- Hierarchical models: Bell, Fairborther, Jones 2018
-	- Time-varying coefficients regression models
+	- Time-varying coefficients regression models: Textbook
+	- Changepoint modelling: Chao and Bayesian Alternatives  
+
+2. Reading: [Topic 4 Readings](/readings/day_4/)
+
+3. Representative Applications are contained in the papers.
 
 ## Discrete Time Series, Latent Variables, and State Spaces
 
 1.  Time Series Models of Latent Variables
-	- State Space representations of time series processes
-	- Dynamic factor analysis with covariates
+	- State Space representations of time series processes  
+	- Dynamic factor analysis with covariates  
+	- Markov Processes: Markov Process Models of Human Rights  
+	- Fixed and Random Effects GLMs: Baltagi chapter  
+	- Grouped Duration: Beck, Katz, Tucker and Carter and Signorino  
+2. Reading: [Topic 5 Readings](/readings/day_5/)
+3. Representative Applications: Jackman, "Pooling the Polls" and Bond Ratings [A Post](https://rww.science/post/pew-data-on-bond-ratings-and-rainy-day-funds/)
 
-Reading:
-Commandeur and Koopman, chs. 1-9
-Application: Jackman, "Pooling the Polls"
-Application: Some Bond Ratings Paper [A Post](https://rww.science/post/pew-data-on-bond-ratings-and-rainy-day-funds/)
+## Dynamic Panel Data: GMM
+
+1. Generalized Method of Moments Defined  
+  - Arellano and Bond and related methods: systems, levels, and differences 2. Reading: [Topic 6 Readings](/readings/day_6/)
+
 
 ## Texts
 
-Box-Steffensmeier, Janet et al. 2014. Time Series Analysis for the Social Sciences. New York: Cambridge 	University Press.
+Box-Steffensmeier, Janet et al. 2014. Time Series Analysis for the Social Sciences. New York: Cambridge University Press.
 
 
-### Recommended Supplementary Texts
-
-Asteriou, Dimitrios and Stephen G. Hall. 2011. Applied Econometrics: A Modern Approach Using 	EVIEWS and Microfit. 2nd Edition. London: Palgrave.
+## Some Supplements
 
 Colonescu, Constantin.  2016.  Principles of Econometrics with R. [Link](https://bookdown.org/ccolonescu/RPoE4/)
 
@@ -114,7 +118,10 @@ Pfaff, Bernhard. 2006. Analysis of Integrated and Cointegrated Time Series With 
 [PLM: Panel Linear Models:](https://cran.r-project.org/web/packages/plm/plm.pdf)  
 
 
-# REFERENCES
+# A Partial Bibliography
+
+Selections from:
+Baltagi, Arellano, and Hsaio textbooks in Panel Data Methods
 
 Baillie, R. T. and T. Bollerslev. 1994. “Cointegation, Fractional Cointegration and Exchange Rate 	Dynamics.” The Journal of Finance 49: 737-45.
 

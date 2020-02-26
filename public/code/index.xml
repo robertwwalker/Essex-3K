@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on 3K: Dynamics and Heterogeneity</title>
-    <link>https://essex2019-3k.netlify.com/code/</link>
+    <link>/code/</link>
     <description>Recent content in Code on 3K: Dynamics and Heterogeneity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
     
-	<atom:link href="https://essex2019-3k.netlify.com/code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ACF and PACF on Generated Data</title>
-      <link>https://essex2019-3k.netlify.com/code/acf-and-pacf-on-generated-data/</link>
+      <link>/code/acf-and-pacf-on-generated-data/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/code/acf-and-pacf-on-generated-data/</guid>
+      <guid>/code/acf-and-pacf-on-generated-data/</guid>
       <description>Simulating Data Simulating data under an ARIMA model in R is made rather easy. From the documentation on arima in stats, we obtain that $$ X_t = a1 X{t-1} + a{2} X{t-2} + \ldots + a{p} X{t-p} + b1 \epsilon{t-1} + b[2] \epsilon{t-2} + \ldots + b{q} \epsilon{t-q} $$ by construction. This can be adjusted with the rand.gen argument.
 library(ggplot2) library(forecast) my.data &amp;lt;- arima.sim(list(ar=c(0.7,0.2)), n=100) my.data2 &amp;lt;- data.frame(x=seq(1,100), y=my.data) ggplot(my.</description>
     </item>
     
     <item>
       <title>Summarising Panel Data</title>
-      <link>https://essex2019-3k.netlify.com/code/panel-summary/</link>
+      <link>/code/panel-summary/</link>
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://essex2019-3k.netlify.com/code/panel-summary/</guid>
+      <guid>/code/panel-summary/</guid>
       <description>A summary function for panel data.
 xtsum &amp;lt;- function(formula, data) { pform &amp;lt;- terms(formula, data=data) unit &amp;lt;- pform[[2]] vars &amp;lt;- attr(pform, &amp;quot;term.labels&amp;quot;) cls &amp;lt;- sapply(data, class) data &amp;lt;- data %&amp;gt;% select(which(cls%in%c(&amp;quot;numeric&amp;quot;,&amp;quot;integer&amp;quot;))) varnames &amp;lt;- intersect(names(data),vars) sumfunc &amp;lt;- function(data=data, varname, unit) { loc.unit &amp;lt;- enquo(unit) varname &amp;lt;- ensym(varname) ores &amp;lt;- data %&amp;gt;% filter(!is.na(!! varname)==TRUE) %&amp;gt;% summarise( O.mean=round(mean(`$`(data, !! varname), na.rm=TRUE), digits=3), O.sd=round(sd(`$`(data, !! varname), na.rm=TRUE), digits=3), O.min = min(`$`(data, !! varname), na.</description>
     </item>
